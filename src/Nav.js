@@ -30,6 +30,60 @@ function Nav() {
         <Link style={navStyle} to='/week/2/3'>
           <li>week 2 day 3</li>
         </Link>
+        <Link style={navStyle} to='/week/3/1'>
+          <li>week 3 day 1</li>
+        </Link>
+        <Link style={navStyle} to='/week/3/2'>
+          <li>week 3 day 2</li>
+        </Link>
+        <Link style={navStyle} to='/week/3/3'>
+          <li>week 3 day 3</li>
+        </Link>
+        <Link style={navStyle} to='/week/4/1'>
+          <li>week 4 day 1</li>
+        </Link>
+        <Link style={navStyle} to='/week/4/2'>
+          <li>week 4 day 2</li>
+        </Link>
+        <Link style={navStyle} to='/week/4/3'>
+          <li>week 4 day 3</li>
+        </Link>
+        <Link style={navStyle} to='/week/5/1'>
+          <li>week 5 day 1</li>
+        </Link>
+        <Link style={navStyle} to='/week/5/2'>
+          <li>week 5 day 2</li>
+        </Link>
+        <Link style={navStyle} to='/week/5/3'>
+          <li>week 5 day 3</li>
+        </Link>
+        <Link style={navStyle} to='/week/6/1'>
+          <li>week 6 day 1</li>
+        </Link>
+        <Link style={navStyle} to='/week/6/2'>
+          <li>week 6 day 2</li>
+        </Link>
+        <Link style={navStyle} to='/week/6/3'>
+          <li>week 6 day 3</li>
+        </Link>
+        <Link style={navStyle} to='/week/7/1'>
+          <li>week 7 day 1</li>
+        </Link>
+        <Link style={navStyle} to='/week/7/2'>
+          <li>week 7 day 2</li>
+        </Link>
+        <Link style={navStyle} to='/week/7/3'>
+          <li>week 7 day 3</li>
+        </Link>
+        <Link style={navStyle} to='/week/8/1'>
+          <li>week 8 day 1</li>
+        </Link>
+        <Link style={navStyle} to='/week/8/2'>
+          <li>week 8 day 2</li>
+        </Link>
+        <Link style={navStyle} to='/week/8/3'>
+          <li>week 8 day 3</li>
+        </Link>
 
       </ul>
     </nav>
