@@ -12,7 +12,6 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/week/:weekNr/:dayNr" component={Week} />
-
         </Switch>
       </div>
     </Router>
@@ -27,3 +26,4 @@ const Home = () => (
 
 
 export default App;
+    
