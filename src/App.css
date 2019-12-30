@@ -25,3 +25,7 @@ nav {
     justify-content: space-between;
     margin-right: 10px;
 }
+
+.link-style {
+  text-decoration: none;
+}
