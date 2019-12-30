@@ -1,0 +1,31 @@
+.week-container {
+  height: 70px;
+  display: flex;
+}
+
+.weekday-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.week-marker {
+  width: 30px;
+  line-height: 70px;
+  text-align: center;
+  border-right: 1px solid lightblue;
+}
+
+.week-container .exercise-link {
+  background-color: lightblue;
+  color: black;
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  line-height: 50px;
+}

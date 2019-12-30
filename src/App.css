@@ -19,13 +19,6 @@ nav {
   list-style: none;
 } */
 
-.week-container{
-  display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 10px;
-}
-
 .link-style {
   text-decoration: none;
   cursor: pointer;
