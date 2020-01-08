@@ -7,6 +7,7 @@ function HomeComponent() {
 
   return (
     <nav>
+      <button onClick={console.log('clicked')}> Click me </button>
       <div className="nav-links">
         <div className='week-container'>
           <span className="week-marker">1</span>
