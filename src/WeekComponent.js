@@ -16,9 +16,14 @@ function WeekComponent(props) {
     console.log('listened');
   }
   
+  function stopwatch(){
+   let id = setInterval(() => {
+     console.log("hello world");
+   },1000);
+  }
   return (
     <div>
-      <button onClick={shoot}>Take the shot!</button>
+      <button onClick={stopwatch}>Take the shot!</button>
        <span>{exercises[weekNr][dayNr]}</span>
        <Link className="link-style" style={navStyle} to='/'>
           <div>Back to home</div>
