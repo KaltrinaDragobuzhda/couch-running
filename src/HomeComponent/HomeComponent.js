@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 
 function HomeComponent() {
-
+  function shoot() {
+    console.log('listened');
+  }
   return (
     <nav>
-      <button onClick={console.log('clicked')}> Click me </button>
+  <button onClick={shoot}>Take the shot!</button>
       <div className="nav-links">
         <div className='week-container'>
           <span className="week-marker">1</span>
