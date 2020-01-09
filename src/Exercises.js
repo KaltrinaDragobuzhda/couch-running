@@ -1,7 +1,10 @@
 
 let exercises = {
   1:{
-    1:"Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.",
+    1:{
+      human:"Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.",
+      machine:[3,6,9,6,9,6,90,60,90,60,90,60,90,60,90,60,90]
+    },
     2:"Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.",
     3:"Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes."
   },
@@ -42,7 +45,7 @@ let exercises = {
   },
   9: {
     1:"Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).",
-    2:"Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).",
+    2:{human:"Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).",machine:[300,1800]},
     3:"The final workout! Congratulations! Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes)."
   }
 }
