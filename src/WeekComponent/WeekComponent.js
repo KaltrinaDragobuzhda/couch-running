@@ -1,7 +1,8 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 import { Link } from 'react-router-dom';
-import exercises from "./Exercises";
+import exercises from "../Exercises";
+import './WeekComponent.css';
 
 class Ujk extends React.Component {
 
@@ -40,11 +41,11 @@ class Ujk extends React.Component {
   }
   
   render() {
-    return <div>
-      <button onClick={this.stopwatch}>Start</button> <br />
-      <span>{exercises[this.state.weekNr][this.state.dayNr].human}</span><br />
-      <div>{this.state.seconds}</div> <br />
-      <div>{this.state.action}</div> <br />
+    return <div className="week-component-container-class">
+      <button className="start-button" onClick={this.stopwatch}>Start</button> 
+      <span className="show-human-exercises-class">{exercises[this.state.weekNr][this.state.dayNr].human}</span>
+      <div className="counting-seconds-class">{this.state.seconds}</div> 
+      <div className="state-action-class">{this.state.action}</div> 
       <Link className="link-style" style={this.navStyle} to='/'>
         <div>Back to home</div>
       </Link>

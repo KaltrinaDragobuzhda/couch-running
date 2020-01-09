@@ -1,0 +1,30 @@
+.week-component-container-class {
+  display: flex;
+  flex-direction: column;
+}
+
+.start-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
+  border: solid 2px #f5f5f5;
+  background-color: #009eff;
+  right: 0;
+  cursor: pointer;
+  color: white;
+  align-self: center;
+}
+
+.counting-seconds-class{
+align-self: center;
+color: blue;
+}
+
+.state-action-class{
+  align-self: center;
+  color: red;
+}
+
+.show-human-exercises-class{
+padding: 8px;
+}
