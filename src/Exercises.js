@@ -1,4 +1,3 @@
-import React from 'react';
 
 let exercises = {
   1:{
