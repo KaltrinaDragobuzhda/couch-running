@@ -27,7 +27,7 @@ let exercises = {
     3:"Brisk five-minute warmup walk, then: Jog two miles (or 20 minutes) with no walking."
   },
   6: {
-    1:{human:"Brisk five-minute warmup walk, then: • Jog 1/2 mile(or 5 minutes) Walk 1/4 mile (or 3 minutes) • Jog 3/4 mile (or 8 minutes) Walk 1/4 mile (or 3 minutes) • Jog 1/2 mile (or 5 minutes)",machine:[300,180,480,180,300]},
+    1:{human:"Brissk five-minute warmup walk, then: • Jog 1/2 mile(or 5 minutes) Walk 1/4 mile (or 3 minutes) • Jog 3/4 mile (or 8 minutes) Walk 1/4 mile (or 3 minutes) • Jog 1/2 mile (or 5 minutes)",machine:[300,180,480,180,300]},
     2:{human:"Brisk five-minute warmup walk, then: • Jog 1 mile minutes) Walk 1/4 mile (or 3 minutes). Jog 1 mile (or 10 minutes)",machine:[300,600,180]},
     3:{human:"Brisk five-minute warmup walk, then: • Jog 2-1/4 mile or 22 minutes with no walking.", machine:[300,1320]}
   },
