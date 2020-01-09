@@ -1,3 +1,5 @@
+import React from 'react';
+
 let exercises = {
   1:{
     1:"Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.",

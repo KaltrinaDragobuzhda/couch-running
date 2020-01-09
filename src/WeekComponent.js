@@ -24,15 +24,14 @@ class Ujk extends React.Component {
   }
   render() {
   return <div>
-      <button onClick={this.stopwatch}>Take the shot!</button>
-       <span>{exercises[this.state.weekNr][this.state.dayNr]}</span>
-       <div>{this.state.seconds}</div>
+      <button onClick={this.stopwatch}>Start</button> <br />
+       <span>{exercises[this.state.weekNr][this.state.dayNr]}</span><br />
+       <div>{this.state.seconds}</div> <br />
        <Link className="link-style" style={this.navStyle} to='/'>
           <div>Back to home</div>
         </Link>
     </div>;
   }
 }
-
 
 export default Ujk;
