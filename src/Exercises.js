@@ -66,19 +66,19 @@ let exercises = {
     3:{human:"Brisk five-minute warmup walk, then: • Jog 2-1/4 mile or 22 minutes with no walking.", machine:[300,1320]}
   },
   7: {
-    1: "Brisk five-minute warmup walk, then jog 2.5 miles (or 25 minutes)",
-    2: "Brisk five-minute warmup walk, then jog 2.5 miles (or 25 minutes)",
-    3: "Brisk five-minute warmup walk, then jog 2.5 miles (or 25 minutes)"
+    1: {human:"Brisk five-minute warmup walk, then jog 2.5 miles (or 25 minutes)",machine: [300, 1800] },
+    2: {human:"Brisk five-minute warmup walk, then jog 2.5 miles (or 25 minutes)",machine: [300, 1800] },
+    3: {human:"Brisk five-minute warmup walk, then jog 2.5 miles (or 25 minutes)",machine: [300, 1800] }
   },
   8: {
-    1: "Brisk five-minute warmup walk, then jog 2.75 miles (or 28 minutes).",
-    2: "Brisk five-minute warmup walk, then jog 2.75 miles (or 28 minutes).",
-    3: "Brisk five-minute warmup walk, then jog 2.75 miles (or 28 minutes)."
+    1: {human:"Brisk five-minute warmup walk, then jog 2.75 miles (or 28 minutes).",machine: [300, 1800] },
+    2: {human:"Brisk five-minute warmup walk, then jog 2.75 miles (or 28 minutes).",machine: [300, 1800] },
+    3: {human:"Brisk five-minute warmup walk, then jog 2.75 miles (or 28 minutes).",machine: [300, 1800] }
   },
   9: {
-    1: "Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).",
-    2: { human: "Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).", machine: [300, 1800] },
-    3: "The final workout! Congratulations! Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes)."
+    1: {human:"Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).", machine:[300,1800]},
+    2: {human: "Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).", machine: [300, 1800] },
+    3: {human:"The final workout! Congratulations! Brisk five-minute warmup walk, then jog 3 miles (or 30 minutes).", machine: [300, 1800] }
   }
 }
 export default exercises;
