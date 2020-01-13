@@ -8,21 +8,31 @@ class Ujk extends React.Component {
 
   constructor(props) {
     super(props);
+    this.start = this.start.bind(this);
     this.stopwatch = this.stopwatch.bind(this);
     this.state = {
       weekNr: props.match.params.weekNr[0],
       dayNr: props.match.params.dayNr[0],
       seconds: 0,
       totalSeconds: 0,
-      action: "warmup",
+      action: "idle",
       stepIndex: 0
     }
   }
 
+  start() {
+    this.setState({
+      action:"warmup"
+    }, this.stopwatch);
+  }
+
   stopwatch() {
-   setInterval(() => {
+   this.intervalId = setInterval(() => {
      if(this.state.stepIndex === exercises[this.state.weekNr][this.state.dayNr].machine.length) {
-      alert("we should be done here");
+      clearInterval(this.intervalId);
+      this.setState({
+        action:"ended"
+      });
      }
      else {
       if(this.state.seconds === exercises[this.state.weekNr][this.state.dayNr].machine[this.state.stepIndex]) {

@@ -3,7 +3,7 @@ let exercises = {
   1: {
     1: {
       human: "Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.",
-      machine: [3, 6, 9, 6, 9, 6, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
+      machine: [3, 6, 9]
     },
     2: {
       human: "Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.",
