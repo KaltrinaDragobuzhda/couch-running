@@ -1,4 +1,4 @@
-.week-component-container-class {
+.week-component-container {
   display: flex;
   flex-direction: column;
 }
@@ -15,16 +15,16 @@
   align-self: center;
 }
 
-.counting-seconds-class{
+.counting-seconds{
 align-self: center;
 color: blue;
 }
 
-.state-action-class{
+.state-action{
   align-self: center;
   color: red;
 }
 
-.show-human-exercises-class{
+.show-human-exercises{
 padding: 8px;
 }

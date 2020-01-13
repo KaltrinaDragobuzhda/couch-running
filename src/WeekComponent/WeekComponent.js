@@ -37,13 +37,15 @@ class Ujk extends React.Component {
       if(this.state.seconds === exercises[this.state.weekNr][this.state.dayNr].machine[this.state.stepIndex]) {
         this.setState({
           seconds: 1,
+          totalSeconds: this.state.totalSeconds+1,
           stepIndex: this.state.stepIndex+1,
           action: this.state.action==="run"?"walk":"run"
         });
        }
        else {
         this.setState({
-          seconds: this.state.seconds + 1
+          seconds: this.state.seconds + 1,
+          totalSeconds: this.state.totalSeconds+1
         });
        }
      }
@@ -51,11 +53,12 @@ class Ujk extends React.Component {
   }
   
   render() {
-    return <div className="week-component-container-class">
+    return <div className="week-component-container">
       <button className="start-button" onClick={this.start}>Start</button> 
-      <span className="show-human-exercises-class">{exercises[this.state.weekNr][this.state.dayNr].human}</span>
-      <div className="counting-seconds-class">{this.state.seconds}</div> 
-      <div className="state-action-class">{this.state.action}</div> 
+      <span className="show-human-exercises">{exercises[this.state.weekNr][this.state.dayNr].human}</span>
+      <div className="counting-seconds">{this.state.seconds}</div> 
+      <div className="counting-seconds">{this.state.totalSeconds}</div> 
+      <div className="state-action">{this.state.action}</div> 
       <Link className="link-style" style={this.navStyle} to='/'>
         <div>Back to home</div>
       </Link>
