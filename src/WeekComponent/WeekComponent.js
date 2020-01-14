@@ -17,7 +17,7 @@ class WeekComponent extends React.Component {
     this.totali = 0;
     this.state = {
       seconds: 0,
-      totalSeconds: 0,
+      totalSeconds: this.total(exercises[this.weekNr][this.dayNr].machine),
       action: "idle"
     }
   }
@@ -28,10 +28,8 @@ class WeekComponent extends React.Component {
       totali += machine[i];
     }
     return totali; 
-
   }
 
-  
   componentWillUnmount() {
     if(this.intervalId) {
       clearInterval(this.intervalId);
@@ -61,15 +59,15 @@ class WeekComponent extends React.Component {
           this.stepIndex++;
           this.setState({
             seconds: 1,
-            totalSeconds: this.state.totalSeconds+1,
+            totalSeconds: this.state.totalSeconds-1,
             action: this.state.action==="run"?"walk":"run"
           });
         }
       }
       else {
         this.setState({
-          seconds: this.state.seconds + 1,
-          totalSeconds: this.state.totalSeconds+1
+          seconds: this.state.seconds +1,
+          totalSeconds: this.state.totalSeconds-1
         });
       }
     }, 1000);
@@ -81,7 +79,6 @@ class WeekComponent extends React.Component {
       <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
       <div className="counting-seconds">{this.toMins(this.state.seconds)}</div> 
       <div className="counting-seconds">{this.toMins(this.state.totalSeconds)}</div> 
-      <div>{this.total(exercises[this.weekNr][this.dayNr].machine)}</div>
       <div className="state-action">{this.state.action}</div> 
       <Link className="link-style" style={this.navStyle} to='/'>
         <div>Back to home</div>
