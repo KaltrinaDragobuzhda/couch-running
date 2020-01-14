@@ -39,7 +39,7 @@ class WeekComponent extends React.Component {
   stopwatch() {
     this.intervalId = setInterval(() => {
       if(this.state.seconds === exercises[this.weekNr][this.dayNr].machine[this.stepIndex]) {
-        if(this.state.stepIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
+        if(this.stepIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
           clearInterval(this.intervalId);
           this.setState({
             action:"ended"
