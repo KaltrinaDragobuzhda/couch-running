@@ -77,5 +77,6 @@ class WeekComponent extends React.Component {
     </div>;
   }
 }
+console.log('yeyy');
 
 export default WeekComponent;
