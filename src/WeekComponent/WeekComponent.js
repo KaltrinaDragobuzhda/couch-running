@@ -7,6 +7,7 @@ class WeekComponent extends React.Component {
 
   constructor(props) {
     super(props);
+    this.total = this.total.bind(this);
     this.start = this.start.bind(this);
     this.stopwatch = this.stopwatch.bind(this);
     this.intervalId = null;
@@ -19,6 +20,14 @@ class WeekComponent extends React.Component {
       totalSeconds: this.total(exercises[this.weekNr][this.dayNr].machine),
       action: "idle"
     }
+  }
+
+  total(machine){
+    let totali = 0;
+    for(let i = 0; i<machine.length;i++){
+      totali += machine[i];
+    }
+    return totali; 
   }
 
   componentWillUnmount() {
@@ -77,6 +86,5 @@ class WeekComponent extends React.Component {
     </div>;
   }
 }
-console.log('yeyy');
 
 export default WeekComponent;
