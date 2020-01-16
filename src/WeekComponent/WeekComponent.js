@@ -91,8 +91,8 @@ class WeekComponent extends React.Component {
   render() {
     return <div className="week-component-container">
       {this.state.intervalId?
-      <button className="pause-button" onClick={this.pause}>Pause</button>:
-      <button className="start-button" onClick={this.start}>Start</button> }
+      <button className="pause-start-button" onClick={this.pause}>Pause</button>:
+      <button className="pause-start-button" onClick={this.start}>Start</button> }
       <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
       <div className="counting-seconds">{this.toMins(this.state.seconds)}</div> 
       <div className="counting-seconds">{this.toMins(this.state.totalSeconds)}</div> 
