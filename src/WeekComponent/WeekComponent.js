@@ -9,6 +9,7 @@ class WeekComponent extends React.Component {
     super(props);
     this.total = this.total.bind(this);
     this.start = this.start.bind(this);
+    this.pause = this.pause.bind(this);
     this.stopwatch = this.stopwatch.bind(this);
     this.intervalId = null;
     this.stepIndex = 0;
@@ -31,15 +32,26 @@ class WeekComponent extends React.Component {
   }
 
   componentWillUnmount() {
-    if(this.intervalId) {
-      clearInterval(this.intervalId);
+    if(this.state.intervalId) {
+      clearInterval(this.state.intervalId);
     }
   }
 
   start() {
     this.setState({
-      action:"warmup"
+      action:this.oldAction?this.oldAction:"warmup"
     }, this.stopwatch);
+  }
+
+  pause(){
+    if(this.state.intervalId) {
+      clearInterval(this.state.intervalId);
+      this.oldAction = this.state.action;
+      this.setState({
+        action:"paused",
+        intervalId: null
+      });
+    }
   }
 
   toMins(seconds){
@@ -47,10 +59,10 @@ class WeekComponent extends React.Component {
   }
 
   stopwatch() {
-    this.intervalId = setInterval(() => {
+    let intervalId = setInterval(() => {
       if(this.state.seconds === exercises[this.weekNr][this.dayNr].machine[this.stepIndex]) {
         if(this.stepIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
-          clearInterval(this.intervalId);
+          clearInterval(intervalId);
           this.setState({
             action:"ended"
           });
@@ -71,11 +83,16 @@ class WeekComponent extends React.Component {
         });
       }
     }, 1000);
+    this.setState({
+      intervalId
+    });
   }
   
   render() {
     return <div className="week-component-container">
-      <button className="start-button" onClick={this.start}>Start</button> 
+      {this.state.intervalId?
+      <button className="pause-button" onClick={this.pause}>Pause</button>:
+      <button className="start-button" onClick={this.start}>Start</button> }
       <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
       <div className="counting-seconds">{this.toMins(this.state.seconds)}</div> 
       <div className="counting-seconds">{this.toMins(this.state.totalSeconds)}</div> 
