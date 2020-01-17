@@ -98,7 +98,7 @@ class WeekComponent extends React.Component {
       <div className="counting-seconds">{this.toMins(this.state.totalSeconds)}</div> 
       <div className="state-action">{this.state.action}</div> 
       <Link className="link-style" style={this.navStyle} to='/'>
-        <div>Back to home</div>
+        <div className="back-to-home">Back to home</div>
       </Link>
     </div>;
   }

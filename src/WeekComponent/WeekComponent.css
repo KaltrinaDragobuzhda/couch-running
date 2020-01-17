@@ -13,6 +13,7 @@
   cursor: pointer;
   color: white;
   align-self: center;
+  margin-top: 10px;
 }
 
 .counting-seconds{
@@ -27,4 +28,11 @@ color: blue;
 
 .show-human-exercises{
 padding: 8px;
+font-size: 15px;
+font-family: sans-serif;
+word-break: break-word;
+}
+
+.back-to-home{
+  padding: 8px;
 }
