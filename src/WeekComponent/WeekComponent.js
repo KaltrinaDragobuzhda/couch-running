@@ -20,7 +20,7 @@ class WeekComponent extends React.Component {
     this.state = {
       seconds: 0,
       totalSeconds: this.total(exercises[this.weekNr][this.dayNr].machine),
-      action: "idlee"
+      action: "idle"
     }
   }
 
