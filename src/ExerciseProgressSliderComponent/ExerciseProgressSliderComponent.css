@@ -1,0 +1,40 @@
+.exercise-slider-item:nth-child(odd) {
+    background: #eaff2e;
+}
+
+.exercise-slider-item:nth-child(even) {
+    background: #56d176;
+}
+
+.exercise-slider-item:first-child {
+    background: #ff2450;
+}
+
+.exercise-slider-item {
+    display: inline-block;
+    font-size: 0;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.exercise-slider {
+    position: relative;
+    height: 50px;
+    line-height: 0;
+    font-size: 0;
+    /* overflow: hidden; */
+}
+
+.exercise-marker {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: #b88dc4;
+    border-radius: 50%;
+    top: 23%;
+    margin-left: -23px;
+}
+
+.encapsulate{
+    padding: 20px;
+}
