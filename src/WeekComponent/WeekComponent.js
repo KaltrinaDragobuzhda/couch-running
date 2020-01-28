@@ -101,7 +101,7 @@ class WeekComponent extends React.Component {
       <div className="counting-seconds">{this.toMins(this.state.seconds)}</div> 
       <div className="counting-seconds">{this.toMins(this.state.totalLength - this.state.totalSeconds)}</div> 
       <div className="state-action">{this.state.action}</div> 
-      <ProgressSliderDescription exercise={exercises[this.weekNr][this.dayNr].machine} action = {} />
+      <ProgressSliderDescription exercise={exercises[this.weekNr][this.dayNr].machine} />
       <ExcerciseProgressSliderComponent currentSeconds={this.state.totalSeconds} exercise={exercises[this.weekNr][this.dayNr].machine} />
       
       <br/>
