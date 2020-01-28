@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomeComponent.css';
 import { Link } from 'react-router-dom';
+import { getObject } from '../exerciseStorageService';
 
 
 function HomeComponent() {
@@ -67,13 +68,14 @@ function HomeComponent() {
     </nav>
   );
 }
- const lastFinishedWeekNumber =  localStorage.getItem("lastFinishedWeekNumber");
- const lastFinishedDayNumber = localStorage.getItem("lastFinishedDayNumber");
+
 
 
 function WeekDayComponent(props) {
-const isFinished = props.week === lastFinishedWeekNumber ?  props.day <= lastFinishedDayNumber : props.week <= lastFinishedWeekNumber;
-  if(isFinished){
+
+  let exerciseData = getObject();
+  let existingData = exerciseData.finished.find(x => x[0] === props.week && x[1] === props.day);
+  if(existingData) {
     return <div className="weekday-container"><Link className="exercise-link exercise-link-completed"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
   }
   else {

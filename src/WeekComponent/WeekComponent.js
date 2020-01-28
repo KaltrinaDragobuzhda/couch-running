@@ -2,6 +2,7 @@ import React from 'react';
 import './WeekComponent.css';
 import { Link } from 'react-router-dom';
 import exercises from "../Exercises";
+import { setExerciseAsComplete } from "../exerciseStorageService";
 
 
 class WeekComponent extends React.Component {
@@ -45,7 +46,7 @@ class WeekComponent extends React.Component {
     }, this.startExercise);
   }
 
-  pause() { 
+  pause() {
     if (this.state.intervalId) {
       clearInterval(this.state.intervalId);
       this.oldAction = this.state.action;
@@ -76,9 +77,9 @@ class WeekComponent extends React.Component {
             weekNr: this.weekNr,
             dayNr: this.dayNr
           });
-          localStorage.setItem('lastFinishedWeekNumber', this.weekNr);
-          localStorage.setItem('lastFinishedDayNumber', this.dayNr)
+          setExerciseAsComplete(this.weekNr, this.dayNr);
         }
+
         else {
           this.stepIndex++;
           this.setState({

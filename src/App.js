@@ -3,6 +3,14 @@ import './App.css';
 import WeekComponent from "./WeekComponent/WeekComponent";
 import HomeComponent from "./HomeComponent/HomeComponent";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { getObject, setObject } from './exerciseStorageService';
+
+let exerciseData = getObject();
+if(!exerciseData) {
+  setObject({
+    finished:[]
+  });
+}
 
 function App() {
   return (
