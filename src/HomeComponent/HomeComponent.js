@@ -67,9 +67,18 @@ function HomeComponent() {
     </nav>
   );
 }
+ const lastFinishedWeekNumber =  localStorage.getItem("lastFinishedWeekNumber");
+ const lastFinishedDayNumber = localStorage.getItem("lastFinishedDayNumber");
+
 
 function WeekDayComponent(props) {
-  return <div className="weekday-container"><Link className="exercise-link" to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
+const isFinished = props.week === lastFinishedWeekNumber ?  props.day <= lastFinishedDayNumber : props.week <= lastFinishedWeekNumber;
+  if(isFinished){
+    return <div className="weekday-container"><Link className="exercise-link exercise-link-completed"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
+  }
+  else {
+    return <div className="weekday-container"><Link className="exercise-link"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
+  }
 }
 
 export default HomeComponent;

@@ -6,35 +6,31 @@ import exercises from "../Exercises";
 
 class WeekComponent extends React.Component {
 
+
   constructor(props) {
     super(props);
-    this.total = this.total.bind(this);
+    this.Total = this.Total.bind(this);
     this.start = this.start.bind(this);
     this.pause = this.pause.bind(this);
-    this.stopwatch = this.stopwatch.bind(this);
+    this.startExercise = this.startExercise.bind(this);
     this.intervalId = null;
     this.stepIndex = 0;
     this.weekNr = props.match.params.weekNr[0];
     this.dayNr = props.match.params.dayNr[0];
-    this.totali = 0;
+    this.total = 0;
     this.state = {
       seconds: 0,
-      totalSeconds: this.total(exercises[this.weekNr][this.dayNr].machine),
+      totalSeconds: this.Total(exercises[this.weekNr][this.dayNr].machine),
       action: "idle"
     }
   }
 
-  writeToLocalStorage = () => {
-    localStorage.setItem('weekNumber', this.weekNr);
-    localStorage.setItem('dayNumber', this.dayNr)
-  };
-
-  total(machine) {
-    let totali = 0;
+  Total(machine) {
+    let total = 0;
     for (let i = 0; i < machine.length; i++) {
-      totali += machine[i];
+      total += machine[i];
     }
-    return totali;
+    return total;
   }
 
   componentWillUnmount() {
@@ -46,10 +42,10 @@ class WeekComponent extends React.Component {
   start() {
     this.setState({
       action: this.oldAction ? this.oldAction : "warmup"
-    }, this.stopwatch);
+    }, this.startExercise);
   }
 
-  pause() {
+  pause() { 
     if (this.state.intervalId) {
       clearInterval(this.state.intervalId);
       this.oldAction = this.state.action;
@@ -57,24 +53,31 @@ class WeekComponent extends React.Component {
         action: "paused",
         intervalId: null
       });
+      localStorage.setItem('seconds', this.state.seconds);
+      localStorage.setItem('totalSeconds', this.state.totalSeconds);
+      localStorage.setItem('action', this.state.action);
+      localStorage.setItem('stepIndex', this.stepIndex);
+      localStorage.setItem('lastFinishedWeekNumber', this.weekNr);
+      localStorage.setItem('lastFinishedDayNumber', this.dayNr);
     }
   }
 
-  toMins(seconds) {
+  convertMinutestoSeconds(seconds) {
     return Math.floor(seconds / 60) + ":" + (seconds % 60 < 10 ? "0" + seconds % 60 : seconds % 60);
   }
 
-  stopwatch() {
+  startExercise() {
     let intervalId = setInterval(() => {
       if (this.state.seconds === exercises[this.weekNr][this.dayNr].machine[this.stepIndex]) {
         if (this.stepIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
           clearInterval(intervalId);
           this.setState({
             action: "ended",
-            weekNr: this.weekNr
+            weekNr: this.weekNr,
+            dayNr: this.dayNr
           });
-          localStorage.setItem('weekNumber', this.weekNr);
-          localStorage.setItem('dayNumber', this.dayNr)
+          localStorage.setItem('lastFinishedWeekNumber', this.weekNr);
+          localStorage.setItem('lastFinishedDayNumber', this.dayNr)
         }
         else {
           this.stepIndex++;
@@ -103,8 +106,8 @@ class WeekComponent extends React.Component {
         <button className="pause-start-button" onClick={this.pause}>Pause</button> :
         <button className="pause-start-button" onClick={this.start}>Start</button>}
       <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
-      <div className="counting-seconds">{this.toMins(this.state.seconds)}</div>
-      <div className="counting-seconds">{this.toMins(this.state.totalSeconds)}</div>
+      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.seconds)}</div>
+      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.totalSeconds)}</div>
       <div className="state-action">{this.state.action}</div>
       <Link className="link-style" style={this.navStyle} to='/'>
         <div className="back-to-home">Back to home</div>
