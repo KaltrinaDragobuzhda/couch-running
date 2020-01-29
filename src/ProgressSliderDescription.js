@@ -2,8 +2,8 @@ import React from "react";
 import "./description.css";
 
 export default function ProgressSliderDescription(props) {
-  var exercise = props.exercise;
-  
+  const exercise = props.exercise;
+
   const getStep = index => {
     if (index === 0) {
       return "warmup";
@@ -16,9 +16,9 @@ export default function ProgressSliderDescription(props) {
     return "walk";
   };
 
-  let totalLength = exercise.reduce((prev, curr) => prev + curr, 0);
+  const totalLength = exercise.reduce((prev, curr) => prev + curr, 0);
 
-  let exerciseComponents = props.exercise.map((x, index) => (
+  const exerciseComponents = props.exercise.map((x, index) => (
     <div
       style={{ width: (100 * x) / totalLength + "%" }}
       className="description"
