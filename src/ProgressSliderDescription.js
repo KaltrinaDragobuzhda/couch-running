@@ -3,14 +3,17 @@ import "./description.css";
 
 export default function ProgressSliderDescription(props) {
   var exercise = props.exercise;
+  
   const getStep = index => {
     if (index === 0) {
       return "warmup";
-    } else if (index % 2 === 1) {
-      return "run";
-    } else {
-      return "walk";
     }
+
+    if (index % 2 === 1) {
+      return "run";
+    }
+
+    return "walk";
   };
 
   let totalLength = exercise.reduce((prev, curr) => prev + curr, 0);
