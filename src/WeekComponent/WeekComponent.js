@@ -2,11 +2,9 @@ import React from 'react';
 import './WeekComponent.css';
 import { Link } from 'react-router-dom';
 import exercises from "../Exercises";
-import { setExerciseAsComplete } from "../exerciseStorageService";
-
+import { setExerciseInProgress, getExerciseInProgress, setExerciseAsComplete } from "../exerciseStorageService";
 
 class WeekComponent extends React.Component {
-
 
   constructor(props) {
     super(props);
@@ -18,10 +16,12 @@ class WeekComponent extends React.Component {
     this.stepIndex = 0;
     this.weekNr = props.match.params.weekNr[0];
     this.dayNr = props.match.params.dayNr[0];
+    const exerciseData = getExerciseInProgress(this.weekNr, this.dayNr);
+    const progress = exerciseData ? exerciseData[2] || 0 : 0;
     this.total = 0;
     this.state = {
-      seconds: 0,
-      totalSeconds: this.Total(exercises[this.weekNr][this.dayNr].machine),
+      seconds: progress,
+      totalSeconds: this.Total(exercises[this.weekNr][this.dayNr].machine) - progress,
       action: "idle"
     }
   }
@@ -52,14 +52,11 @@ class WeekComponent extends React.Component {
       this.oldAction = this.state.action;
       this.setState({
         action: "paused",
-        intervalId: null
+        intervalId: null,
+        weekNr: this.weekNr,
+        dayNr: this.dayNr
       });
-      localStorage.setItem('seconds', this.state.seconds);
-      localStorage.setItem('totalSeconds', this.state.totalSeconds);
-      localStorage.setItem('action', this.state.action);
-      localStorage.setItem('stepIndex', this.stepIndex);
-      localStorage.setItem('lastFinishedWeekNumber', this.weekNr);
-      localStorage.setItem('lastFinishedDayNumber', this.dayNr);
+      setExerciseInProgress(this.weekNr, this.dayNr, this.state.seconds);
     }
   }
 
@@ -69,13 +66,12 @@ class WeekComponent extends React.Component {
 
   startExercise() {
     let intervalId = setInterval(() => {
+
       if (this.state.seconds === exercises[this.weekNr][this.dayNr].machine[this.stepIndex]) {
         if (this.stepIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
           clearInterval(intervalId);
           this.setState({
-            action: "ended",
-            weekNr: this.weekNr,
-            dayNr: this.dayNr
+            action: "ended"
           });
           setExerciseAsComplete(this.weekNr, this.dayNr);
         }

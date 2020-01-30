@@ -8,7 +8,8 @@ import { getObject, setObject } from './exerciseStorageService';
 let exerciseData = getObject();
 if(!exerciseData) {
   setObject({
-    finished:[]
+    finished:[],
+    progress:[]
   });
 }
 
