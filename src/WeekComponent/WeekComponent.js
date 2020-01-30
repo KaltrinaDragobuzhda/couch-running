@@ -107,8 +107,8 @@ class WeekComponent extends React.Component {
       <button className="pause-start-button" onClick={()=>{this.pause()}}>Pause</button>:
       <button className="pause-start-button" onClick={()=>{this.start()}}>Start</button> }
       <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
-      <div className="counting-seconds">{this.toMins(this.state.seconds)}</div> 
-      <div className="counting-seconds">{this.toMins(this.state.totalSeconds)}</div> 
+      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.seconds)}</div> 
+      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.totalSeconds)}</div> 
       <div className="state-action">{this.state.action}</div> 
       <ProgressSliderDescription exercise={exercises[this.weekNr][this.dayNr].machine} />
       <ExcerciseProgressSliderComponent currentSeconds={this.state.totalSeconds} exercise={exercises[this.weekNr][this.dayNr].machine} />
