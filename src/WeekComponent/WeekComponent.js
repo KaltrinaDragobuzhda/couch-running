@@ -3,6 +3,8 @@ import './WeekComponent.css';
 import { Link } from 'react-router-dom';
 import exercises from "../Exercises";
 import { setExerciseInProgress, getExerciseInProgress, setExerciseAsComplete } from "../exerciseStorageService";
+import ExcerciseProgressSliderComponent from "../ExerciseProgressSliderComponent/ExerciseProgressSliderComponent";
+import ProgressSliderDescription from "../ProgressSliderDescription";
 
 class WeekComponent extends React.Component {
 
@@ -80,7 +82,7 @@ class WeekComponent extends React.Component {
           this.stepIndex++;
           this.setState({
             seconds: 1,
-            totalSeconds: this.state.totalSeconds - 1,
+            totalSeconds: this.state.totalSeconds + 1,
             action: this.state.action === "run" ? "walk" : "run"
           });
         }
@@ -88,7 +90,7 @@ class WeekComponent extends React.Component {
       else {
         this.setState({
           seconds: this.state.seconds + 1,
-          totalSeconds: this.state.totalSeconds - 1
+          totalSeconds: this.state.totalSeconds + 1
         });
       }
     }, 1000);
@@ -97,15 +99,21 @@ class WeekComponent extends React.Component {
     });
   }
 
+ 
+
   render() {
     return <div className="week-component-container">
-      {this.state.intervalId ?
-        <button className="pause-start-button" onClick={this.pause}>Pause</button> :
-        <button className="pause-start-button" onClick={this.start}>Start</button>}
+      {this.state.intervalId?
+      <button className="pause-start-button" onClick={()=>{this.pause()}}>Pause</button>:
+      <button className="pause-start-button" onClick={()=>{this.start()}}>Start</button> }
       <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
-      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.seconds)}</div>
-      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.totalSeconds)}</div>
-      <div className="state-action">{this.state.action}</div>
+      <div className="counting-seconds">{this.toMins(this.state.seconds)}</div> 
+      <div className="counting-seconds">{this.toMins(this.state.totalSeconds)}</div> 
+      <div className="state-action">{this.state.action}</div> 
+      <ProgressSliderDescription exercise={exercises[this.weekNr][this.dayNr].machine} />
+      <ExcerciseProgressSliderComponent currentSeconds={this.state.totalSeconds} exercise={exercises[this.weekNr][this.dayNr].machine} />
+      
+      <br/>
       <Link className="link-style" style={this.navStyle} to='/'>
         <div className="back-to-home">Back to home</div>
       </Link>
