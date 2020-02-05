@@ -2,68 +2,88 @@
 const exercises = {
   1: {
     1: {
-      human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.',
+      human: 'Brisk five-minute warmup walk.Then alternate 60 seconds ' +
+     'of jogging and 90 seconds of walking for a total of 20 minutes.',
       machine: [1, 1, 1]
     },
     2: {
-      human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.',
+      human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of' +
+      'jogging and 90 seconds of walking for a total of 20 minutes.',
       machine: [2, 2, 2]
     },
     3: {
-      human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.',
+      human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of' +
+      'jogging and 90 seconds of walking for a total of 20 minutes.',
       machine: [2, 2, 2]
     }
   },
   2: {
     1: {
-      human: 'Brisk five-minute warmups walks.Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes.',
+      human: 'Brisk five-minute warmups walks.Then alternate 90 seconds of' +
+      'jogging and two minutes of walking for a total of 20 minutes.',
       machine: [300, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
     },
     2: {
-      human: 'Brisk five-minute warmup walk.Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes.',
+      human: 'Brisk five-minute warmup walk.Then alternate 90 seconds of' +
+      'jogging and two minutes of walking for a total of 20 minutes.',
       machine: [300, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
     },
     3: {
-      human: 'Brisk five-minute warmup walk.Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes.',
+      human: 'Brisk five-minute warmup walk.Then alternate 90 seconds of' +
+      'jogging and two minutes of walking for a total of 20 minutes.',
       machine: [300, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
     }
   },
   3: {
     1: {
-      human: 'Brisk five-minute warmup walk, then do two repetitions of the following:Jog 200 yards (or 90 seconds) Walk 200 yards (or 90 seconds) Jog 400 yards (or 3 minutes) Walk 400 yards (or three minutes)',
+      human: 'Brisk five-minute warmup walk, then do two repetitions of' +
+      'the following:Jog 200 yards (or 90 seconds) Walk 200 yards (or 90 seconds)' +
+      'Jog 400 yards (or 3 minutes) Walk 400 yards (or three minutes)',
       machine: [2, 2, 2]
     },
     2: {
-      human: 'Brisk five-minute warmup walk, then do two repetitions of the following:Jog 200 yards (or 90 seconds) Walk 200 yards (or 90 seconds) Jog 400 yards (or 3 minutes) Walk 400 yards (or three minutes)',
+      human: 'Brisk five-minute warmup walk, then do two repetitions of' +
+      'the following:Jog 200 yards (or 90 seconds) Walk 200 yards (or 90 seconds)' +
+      'Jog 400 yards (or 3 minutes) Walk 400 yards (or three minutes)',
       machine: [2, 2, 2]
     },
     3: {
-      human: 'Brisk five-minute warmup walk, then do two repetitions of the following:Jog 200 yards (or 90 seconds) Walk 200 yards (or 90 seconds) Jog 400 yards (or 3 minutes) Walk 400 yards (or three minutes)',
+      human: 'Brisk five-minute warmup walk, then do two repetitions of' +
+      'the following:Jog 200 yards (or 90 seconds) Walk 200 yards (or 90 seconds)' +
+      'Jog 400 yards (or 3 minutes) Walk 400 yards (or three minutes)',
       machine: [300, 90, 90, 180, 180]
     }
   },
   4: {
     1: {
-      human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes) Walk 1/8 mile (or 90 seconds) •Jog 1/2 mile (or 5 minutes) Walk 1/4 mile (or 2-1/2 minutes) •Jog 1/4 mile (or 3 minutes) • Walk 1/8 mile (or 90 seconds) • Jog 1/2 mile (or 5 minutes)',
+      human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes)' +
+      'Walk 1/8 mile (or 90 seconds) •Jog 1/2 mile (or 5 minutes) Walk 1/4 mile (or 2-1/2 minutes)' +
+      'Jog 1/4 mile (or 3 minutes) • Walk 1/8 mile (or 90 seconds) • Jog 1/2 mile (or 5 minutes)',
       machine: [300, 180, 90, 300, 120, 180, 90, 300]
     },
     2: {
-      human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes) Walk 1/8 mile (or 90 seconds) •Jog 1/2 mile (or 5 minutes) Walk 1/4 mile (or 2-1/2 minutes) •Jog 1/4 mile (or 3 minutes) • Walk 1/8 mile (or 90 seconds) • Jog 1/2 mile (or 5 minutes)',
+      human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes).' +
+      'Walk 1/8 mile (or 90 seconds) •Jog 1/2 mile (or 5 minutes) Walk 1/4 mile (or 2-1/2 minutes).' +
+      'Jog 1/4 mile (or 3 minutes) • Walk 1/8 mile (or 90 seconds) • Jog 1/2 mile (or 5 minutes)',
       machine: [300, 180, 90, 300, 120, 180, 90, 300]
     },
     3: {
-      human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes) Walk 1/8 mile (or 90 seconds) •Jog 1/2 mile (or 5 minutes) Walk 1/4 mile (or 2-1/2 minutes) •Jog 1/4 mile (or 3 minutes) • Walk 1/8 mile (or 90 seconds) • Jog 1/2 mile (or 5 minutes)',
+      human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes) Walk 1/8 mile (or 90 seconds)' +
+      'Jog 1/2 mile (or 5 minutes) Walk 1/4 mile (or 2-1/2 minutes) •Jog 1/4 mile (or 3 minutes)' +
+      'Walk 1/8 mile (or 90 seconds) • Jog 1/2 mile (or 5 minutes)',
       machine: [300, 180, 90, 300, 120, 180, 90, 300]
 
     }
   },
   5: {
     1: {
-      human: 'Brisk five-minute warmup walk, then: Jog 3/4 mile (or 8 minutes) Walk 1/2 mile (or 5 minutes) Jog 3/4 mile (or 8 minutes).Brisk five-minute warmup walk, then jog two miles (or 20 minutes) with no walking.',
+      human: 'Brisk five-minute warmup walk, then: Jog 3/4 mile (or 8 minutes) Walk 1/2 mile (or 5 minutes)' +
+      'Jog 3/4 mile (or 8 minutes).Brisk five-minute warmup walk, then jog two miles (or 20 minutes) with no walking.',
       machine: [300, 1200]
     },
     2: {
-      human: 'Brisk five-minute warmup walk, then: Jog 3/4 mile (or 8 minutes) Walk 1/2 mile (or 5 minutes) Jog 3/4 mile (or 8 minutes)',
+      human: 'Brisk five-minute warmup walk, then: Jog 3/4 mile (or 8 minutes) Walk 1/2 mile (or 5 minutes)' +
+      'Jog 3/4 mile (or 8 minutes)',
       machine: [300, 480, 300, 480]
     },
     3: {
@@ -73,11 +93,13 @@ const exercises = {
   },
   6: {
     1: {
-      human: 'Brissk five-minute warmup walk, then: • Jog 1/2 mile(or 5 minutes) Walk 1/4 mile (or 3 minutes) • Jog 3/4 mile (or 8 minutes) Walk 1/4 mile (or 3 minutes) • Jog 1/2 mile (or 5 minutes)',
+      human: 'Brissk five-minute warmup walk, then: • Jog 1/2 mile(or 5 minutes) Walk 1/4 mile (or 3 minutes)' +
+      'Jog 3/4 mile (or 8 minutes) Walk 1/4 mile (or 3 minutes) • Jog 1/2 mile (or 5 minutes)',
       machine: [300, 180, 480, 180, 300]
     },
     2: {
-      human: 'Brisk five-minute warmup walk, then: • Jog 1 mile minutes) Walk 1/4 mile (or 3 minutes). Jog 1 mile (or 10 minutes)',
+      human: 'Brisk five-minute warmup walk, then: • Jog 1 mile minutes) Walk 1/4 mile (or 3 minutes).' +
+      'Jog 1 mile (or 10 minutes)',
       machine: [300, 600, 180]
     },
     3: {
@@ -127,5 +149,5 @@ const exercises = {
       machine: [300, 1800]
     }
   }
-}
-export default exercises
+};
+export default exercises;
