@@ -5,25 +5,24 @@ import exercises from "../Exercises";
 import { setExerciseInProgress, getExerciseInProgress, setExerciseAsComplete } from "../exerciseStorageService";
 import ExcerciseProgressSliderComponent from "../ExerciseProgressSliderComponent/ExerciseProgressSliderComponent";
 import ProgressSliderDescription from "../ProgressSliderDescription";
-
 class WeekComponent extends React.Component {
-
   constructor(props) {
     super(props);
     this.Total = this.Total.bind(this);
     this.start = this.start.bind(this);
     this.pause = this.pause.bind(this);
+    this.getStep = this.getStep.bind(this);
     this.startExercise = this.startExercise.bind(this);
     this.intervalId = null;
-    this.stepIndex = 0;
     this.weekNr = props.match.params.weekNr[0];
     this.dayNr = props.match.params.dayNr[0];
     const exerciseData = getExerciseInProgress(this.weekNr, this.dayNr);
-    const progress = exerciseData ? exerciseData[2] || 0 : 0;
-    this.total = 0;
+    const currentExercisePosition = exerciseData ? exerciseData[2] : 0;
+    this.intervalIndex = this.calculateIntervalIndex(exercises[this.weekNr][this.dayNr].machine, currentExercisePosition)
+    const currentIntervalPosition = this.getIntervalSeconds(exercises[this.weekNr][this.dayNr].machine, currentExercisePosition, this.intervalIndex);
     this.state = {
-      seconds: progress,
-      totalSeconds: this.Total(exercises[this.weekNr][this.dayNr].machine) - progress,
+      totalElapsedTime: currentExercisePosition,
+      intervalElapsedTime: currentIntervalPosition,
       action: "idle"
     }
   }
@@ -44,9 +43,39 @@ class WeekComponent extends React.Component {
 
   start() {
     this.setState({
-      action: this.oldAction ? this.oldAction : "warmup"
+      action: this.getStep(this.intervalIndex)
     }, this.startExercise);
   }
+
+  calculateIntervalIndex(arr, num) {
+    let x = 0;
+    for (let i = 0; i < arr.length; i++) {
+      x += arr[i];
+      if (x >= num) {
+        return i;
+      }
+    }
+  }
+
+  getIntervalSeconds(arr, num, intervalIndex) {
+    let x = 0;
+    for (let i = 0; i < intervalIndex; i++) {
+      x += arr[i];
+    }
+    return num - x;
+  }
+ 
+  getStep(intervalIndex) {
+    if (intervalIndex === 0) {
+      return "warmup";
+    }
+
+    if (intervalIndex % 2 === 1) {
+      return "run";
+    }
+
+    return "walk";
+  };
 
   pause() {
     if (this.state.intervalId) {
@@ -58,7 +87,7 @@ class WeekComponent extends React.Component {
         weekNr: this.weekNr,
         dayNr: this.dayNr
       });
-      setExerciseInProgress(this.weekNr, this.dayNr, this.state.seconds);
+      setExerciseInProgress(this.weekNr, this.dayNr, this.state.totalElapsedTime);
     }
   }
 
@@ -68,29 +97,27 @@ class WeekComponent extends React.Component {
 
   startExercise() {
     let intervalId = setInterval(() => {
-
-      if (this.state.seconds === exercises[this.weekNr][this.dayNr].machine[this.stepIndex]) {
-        if (this.stepIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
+      if (this.state.intervalElapsedTime === exercises[this.weekNr][this.dayNr].machine[this.intervalIndex]) {
+        if (this.intervalIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
           clearInterval(intervalId);
           this.setState({
             action: "ended"
           });
           setExerciseAsComplete(this.weekNr, this.dayNr);
         }
-
         else {
-          this.stepIndex++;
+          this.intervalIndex++;
           this.setState({
-            seconds: 1,
-            totalSeconds: this.state.totalSeconds + 1,
-            action: this.state.action === "run" ? "walk" : "run"
+            totalElapsedTime: this.state.totalElapsedTime + 1,
+            intervalElapsedTime: 1,
+            action: this.state.action === "run" ? "walk" : "run",
           });
         }
       }
       else {
         this.setState({
-          seconds: this.state.seconds + 1,
-          totalSeconds: this.state.totalSeconds + 1
+          totalElapsedTime: this.state.totalElapsedTime + 1,
+          intervalElapsedTime: this.state.intervalElapsedTime + 1,
         });
       }
     }, 1000);
@@ -99,26 +126,24 @@ class WeekComponent extends React.Component {
     });
   }
 
- 
-
   render() {
     return <div className="week-component-container">
-      {this.state.intervalId?
-      <button className="pause-start-button" onClick={()=>{this.pause()}}>Pause</button>:
-      <button className="pause-start-button" onClick={()=>{this.start()}}>Start</button> }
+      {this.state.intervalId ?
+        <button className="pause-start-button" onClick={() => { this.pause() }}>Pause</button> :
+        <button className="pause-start-button" onClick={() => { this.start() }}>Start</button>}
       <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
-      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.seconds)}</div> 
-      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.totalSeconds)}</div> 
-      <div className="state-action">{this.state.action}</div> 
+      <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.intervalElapsedTime)}</div>
+      <div className='counting-seconds'>{this.convertMinutestoSeconds(this.state.totalElapsedTime)}</div>
+      <div className="counting-seconds">{this.convertMinutestoSeconds(this.Total(exercises[this.weekNr][this.dayNr].machine) - this.state.totalElapsedTime)}</div>
+      <div className="state-action">{this.state.action}</div>
       <ProgressSliderDescription exercise={exercises[this.weekNr][this.dayNr].machine} />
-      <ExcerciseProgressSliderComponent currentSeconds={this.state.totalSeconds} exercise={exercises[this.weekNr][this.dayNr].machine} />
-      
-      <br/>
+      <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime} currentSeconds={this.state.totalElapsedTime}
+        exercise={exercises[this.weekNr][this.dayNr].machine} />
+      <br />
       <Link className="link-style" style={this.navStyle} to='/'>
         <div className="back-to-home">Back to home</div>
       </Link>
     </div>;
   }
 }
-
 export default WeekComponent;

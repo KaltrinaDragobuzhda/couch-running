@@ -11,10 +11,11 @@ export function setObject(obj){
 export function setExerciseAsComplete(weekNr, dayNr) {
   let exerciseData = getObject();
   let existingData = exerciseData.finished.find(x => x[0] === weekNr && x[1] === dayNr);
+  exerciseData.progress = exerciseData.progress.filter(x => !(x[0] === weekNr && x[1] === dayNr));
   if (!existingData) {
     exerciseData.finished.push([weekNr, dayNr])
-    setObject(exerciseData);
   }
+  setObject(exerciseData);
 }
 
 export function getExerciseInProgress(weekNr, dayNr){
