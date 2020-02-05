@@ -2,7 +2,11 @@ import React from 'react';
 import './WeekComponent.css';
 import { Link } from 'react-router-dom';
 import exercises from '../Exercises';
-import { setExerciseInProgress, getExerciseInProgress, setExerciseAsComplete }
+import {
+  setExerciseInProgress,
+  getExerciseInProgress,
+  setExerciseAsComplete
+}
   from '../exerciseStorageService';
 import ExcerciseProgressSliderComponent
   from '../ExerciseProgressSliderComponent/ExerciseProgressSliderComponent';
