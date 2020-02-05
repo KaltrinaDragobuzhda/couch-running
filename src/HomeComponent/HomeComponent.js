@@ -1,14 +1,12 @@
-import React from 'react';
-import './HomeComponent.css';
-import { Link } from 'react-router-dom';
-import { getObject } from '../exerciseStorageService';
+import React from 'react'
+import './HomeComponent.css'
+import { Link } from 'react-router-dom'
+import { getObject } from '../exerciseStorageService'
 
-
-function HomeComponent() {
- 
+function HomeComponent () {
   return (
     <nav>
-  
+
       <div className="nav-links">
         <div className='week-container'>
           <span className="week-marker">1</span>
@@ -66,27 +64,23 @@ function HomeComponent() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
-
-
-function WeekDayComponent(props) {
-
-  let exerciseData = getObject(); 
-  let existingFinishedData = exerciseData.finished.find(x => x[0] === props.week && x[1] === props.day);
-  let inProgressData = exerciseData.progress.find(x => x[0] === props.week && x[1] === props.day);
+function WeekDayComponent (props) {
+  const exerciseData = getObject()
+  const existingFinishedData = exerciseData.finished.find(x => x[0] === props.week && x[1] === props.day)
+  const inProgressData = exerciseData.progress.find(x => x[0] === props.week && x[1] === props.day)
 
   if (existingFinishedData) {
-    return <div className="weekday-container"><Link className="exercise-link exercise-link-completed"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
-  }  
-
-  if (inProgressData){
-    return <div className="weekday-container"><Link className="exercise-link exercise-link-progress"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
+    return <div className="weekday-container"><Link className="exercise-link exercise-link-completed" to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>
   }
-   
-  return <div className="weekday-container"><Link className="exercise-link"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
-  
+
+  if (inProgressData) {
+    return <div className="weekday-container"><Link className="exercise-link exercise-link-progress" to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>
+  }
+
+  return <div className="weekday-container"><Link className="exercise-link" to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>
 }
 
-export default HomeComponent;
+export default HomeComponent
