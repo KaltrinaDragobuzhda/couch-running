@@ -104,8 +104,7 @@ class WeekComponent extends React.Component {
             action: "ended"
           });
           setExerciseAsComplete(this.weekNr, this.dayNr);
-        }
-        else {
+        } else {
           this.intervalIndex++;
           this.setState({
             totalElapsedTime: this.state.totalElapsedTime + 1,
@@ -113,8 +112,7 @@ class WeekComponent extends React.Component {
             action: this.state.action === "run" ? "walk" : "run",
           });
         }
-      }
-      else {
+      } else {
         this.setState({
           totalElapsedTime: this.state.totalElapsedTime + 1,
           intervalElapsedTime: this.state.intervalElapsedTime + 1,

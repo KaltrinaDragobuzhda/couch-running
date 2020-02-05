@@ -76,15 +76,17 @@ function WeekDayComponent(props) {
   let exerciseData = getObject(); 
   let existingFinishedData = exerciseData.finished.find(x => x[0] === props.week && x[1] === props.day);
   let inProgressData = exerciseData.progress.find(x => x[0] === props.week && x[1] === props.day);
-  if(existingFinishedData) {
+
+  if (existingFinishedData) {
     return <div className="weekday-container"><Link className="exercise-link exercise-link-completed"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
   }  
-    else if (inProgressData){
-      return <div className="weekday-container"><Link className="exercise-link exercise-link-progress"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
-    }
-  else {
-    return <div className="weekday-container"><Link className="exercise-link"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
+
+  if (inProgressData){
+    return <div className="weekday-container"><Link className="exercise-link exercise-link-progress"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
   }
+   
+  return <div className="weekday-container"><Link className="exercise-link"  to={`/week/${props.week}/${props.day}`}>{props.day}</Link></div>;
+  
 }
 
 export default HomeComponent;
