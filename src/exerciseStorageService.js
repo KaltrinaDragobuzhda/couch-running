@@ -18,6 +18,12 @@ export function setExerciseAsComplete (weekNr, dayNr) {
   setObject(exerciseData);
 }
 
+export function resetExercise (weekNr, dayNr) {
+  const exerciseData = getObject();
+  exerciseData.progress = exerciseData.progress.filter(x => !(x[0] === weekNr && x[1] === dayNr));
+  setObject(exerciseData);
+}
+
 export function getExerciseInProgress (weekNr, dayNr) {
   const allExercisesData = getObject();
   const exerciseData = allExercisesData.progress.find(x => x[0] === weekNr && x[1] === dayNr);
