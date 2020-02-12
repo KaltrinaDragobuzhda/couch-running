@@ -5,7 +5,8 @@ import exercises from '../Exercises';
 import {
   setExerciseInProgress,
   getExerciseInProgress,
-  setExerciseAsComplete
+  setExerciseAsComplete,
+  resetExercise
 }
   from '../exerciseStorageService';
 import ExcerciseProgressSliderComponent
@@ -20,6 +21,7 @@ class WeekComponent extends React.Component {
       this.getTotalExerciseTime = this.getTotalExerciseTime.bind(this);
       this.start = this.start.bind(this);
       this.pause = this.pause.bind(this);
+      this.reset = this.reset.bind(this);
       this.getStep = this.getStep.bind(this);
       this.startExercise = this.startExercise.bind(this);
       this.intervalId = null;
@@ -64,6 +66,18 @@ class WeekComponent extends React.Component {
     }, this.startExercise);
   }
 
+  reset () {
+    clearInterval(this.state.intervalId);
+    this.intervalIndex = 0;
+    this.setState({
+      intervalId: null,
+      intervalElapsedTime: 0,
+      totalElapsedTime: 0,
+      action: 'idle'
+    });
+    resetExercise(this.weekNr, this.dayNr);
+  }
+
   calculateIntervalIndex (arr, num) {
     let x = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -98,9 +112,7 @@ class WeekComponent extends React.Component {
       this.oldAction = this.state.action;
       this.setState({
         action: 'paused',
-        intervalId: null,
-        weekNr: this.weekNr,
-        dayNr: this.dayNr
+        intervalId: null
       });
       setExerciseInProgress(this.weekNr, this.dayNr, this.state.totalElapsedTime);
     }
@@ -148,6 +160,18 @@ class WeekComponent extends React.Component {
           ? <button className="pause-start-button" onClick={() => { this.pause(); }}>Pause</button>
           : <button className="pause-start-button" onClick={() => { this.start(); }}>Start</button>}
         <button className="reset-button" onClick={() => { this.reset(); }}>Reset</button>
+        <button className="pause-start-button" onClick={() => { this.reset(); }}>Reset</button>
+        <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
+        <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.intervalElapsedTime)}</div>
+        <div className='counting-seconds'>{this.convertMinutestoSeconds(this.state.totalElapsedTime)}</div>
+        <div className="counting-seconds">
+          {
+            this.convertMinutestoSeconds(
+              this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine) - this.state.totalElapsedTime
+            )
+          }
+        </div>
+        <div className="state-action">{this.state.action}</div>
         <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}
           currentSeconds={this.state.totalElapsedTime}
           exercise={exercises[this.weekNr][this.dayNr].machine} />

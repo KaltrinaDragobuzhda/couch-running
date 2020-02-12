@@ -1,19 +1,19 @@
 import React from 'react';
 import './App.css';
-import WeekComponent from "./WeekComponent/WeekComponent";
-import HomeComponent from "./HomeComponent/HomeComponent";
+import WeekComponent from './WeekComponent/WeekComponent';
+import HomeComponent from './HomeComponent/HomeComponent';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { getObject, setObject } from './exerciseStorageService';
 
-let exerciseData = getObject();
-if(!exerciseData) {
+const exerciseData = getObject();
+if (!exerciseData) {
   setObject({
-    finished:[],
-    progress:[]
+    finished: [],
+    progress: []
   });
 }
 
-function App() {
+function App () {
   return (
     <Router>
       <div className="App">
@@ -27,4 +27,3 @@ function App() {
 }
 
 export default App;
-
