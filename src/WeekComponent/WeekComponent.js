@@ -10,7 +10,6 @@ import {
   from '../exerciseStorageService';
 import ExcerciseProgressSliderComponent
   from '../ExerciseProgressSliderComponent/ExerciseProgressSliderComponent';
-import ProgressSliderDescription from '../ProgressSliderDescription';
 class WeekComponent extends React.Component {
   constructor (props) {
     super(props);
@@ -143,31 +142,40 @@ class WeekComponent extends React.Component {
   render () {
     if (!this.state.badRequest) {
       return <div className="week-component-container">
+        <span className='description-week-day'> Week {this.weekNr} exercise {this.dayNr} </span>
+        <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
         {this.state.intervalId
           ? <button className="pause-start-button" onClick={() => { this.pause(); }}>Pause</button>
           : <button className="pause-start-button" onClick={() => { this.start(); }}>Start</button>}
-        <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
-        <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.intervalElapsedTime)}</div>
-        <div className='counting-seconds'>{this.convertMinutestoSeconds(this.state.totalElapsedTime)}</div>
-        <div className="counting-seconds">
-          {
-            this.convertMinutestoSeconds(
-              this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine) - this.state.totalElapsedTime
-            )
-          }
-        </div>
-        <div className="state-action">{this.state.action}</div>
-        <ProgressSliderDescription exercise={exercises[this.weekNr][this.dayNr].machine} />
+        <button className="reset-button" onClick={() => { this.reset(); }}>Reset</button>
         <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}
           currentSeconds={this.state.totalElapsedTime}
           exercise={exercises[this.weekNr][this.dayNr].machine} />
-        <br />
+        <div className="container">
+          <div className="state-action">{this.state.action}</div>
+          <div className='counting-seconds-container'>
+            <div className="counting-seconds">
+          intervalElapsedTime <div className='seconds'> {this.convertMinutestoSeconds(this.state.intervalElapsedTime)}
+              </div>
+            </div>
+            <div className='counting-seconds'>
+          totalElapsedTime <div className='seconds'>{this.convertMinutestoSeconds(this.state.totalElapsedTime)}</div>
+            </div>
+            <div className="counting-seconds"> Exercise time <div className='seconds'>
+              {
+                this.convertMinutestoSeconds(
+                  this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine) - this.state.totalElapsedTime
+                )
+              }</div>
+            </div>
+          </div>
+        </div>
         <Link className="link-style" style={this.navStyle} to='/'>
           <div className="back-to-home">Back to home</div>
         </Link>
       </div>;
     } else {
-      return <div>Hello World</div>;
+      return <div> Ju lutem te klikoni tek java dhe dita e duhur! </div>;
     }
   }
 }
