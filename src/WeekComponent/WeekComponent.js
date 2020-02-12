@@ -160,18 +160,6 @@ class WeekComponent extends React.Component {
           ? <button className="pause-start-button" onClick={() => { this.pause(); }}>Pause</button>
           : <button className="pause-start-button" onClick={() => { this.start(); }}>Start</button>}
         <button className="reset-button" onClick={() => { this.reset(); }}>Reset</button>
-        <button className="pause-start-button" onClick={() => { this.reset(); }}>Reset</button>
-        <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
-        <div className="counting-seconds">{this.convertMinutestoSeconds(this.state.intervalElapsedTime)}</div>
-        <div className='counting-seconds'>{this.convertMinutestoSeconds(this.state.totalElapsedTime)}</div>
-        <div className="counting-seconds">
-          {
-            this.convertMinutestoSeconds(
-              this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine) - this.state.totalElapsedTime
-            )
-          }
-        </div>
-        <div className="state-action">{this.state.action}</div>
         <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}
           currentSeconds={this.state.totalElapsedTime}
           exercise={exercises[this.weekNr][this.dayNr].machine} />

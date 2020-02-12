@@ -47,7 +47,6 @@
 .container {
   display: flex;
   height: 170px;
-  width: 383px;
 }
 
 .counting-seconds-container {
