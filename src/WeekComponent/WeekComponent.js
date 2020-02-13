@@ -123,7 +123,6 @@ class WeekComponent extends React.Component {
     if (!this.state.isCountingUp) {
       this.setState({
         isCountingUp: true
-
       });
     } else {
       this.setState({
@@ -142,7 +141,8 @@ class WeekComponent extends React.Component {
         if (this.state.intervalIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
           clearInterval(intervalId);
           this.setState({
-            action: 'ended'
+            action: 'ended',
+            intervalId: null
           });
           setExerciseAsComplete(this.weekNr, this.dayNr);
         } else {
@@ -220,7 +220,7 @@ class WeekComponent extends React.Component {
         </Link>
       </div>;
     } else {
-      return <div> Ju lutem te klikoni tek java dhe dita e duhur!!!! </div>;
+      return <div> Ju lutem te klikoni tek java dhe dita e duhur! </div>;
     }
   }
 }
