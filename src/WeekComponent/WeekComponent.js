@@ -22,7 +22,7 @@ class WeekComponent extends React.Component {
       this.start = this.start.bind(this);
       this.pause = this.pause.bind(this);
       this.reset = this.reset.bind(this);
-      this.chan = this.changeTimer.bind(this);
+      this.switchCountingUp = this.switchCountingUp.bind(this);
       this.getStep = this.getStep.bind(this);
       this.startExercise = this.startExercise.bind(this);
       const exerciseData = getExerciseInProgress(this.weekNr, this.dayNr);
@@ -119,7 +119,7 @@ class WeekComponent extends React.Component {
     }
   }
 
-  changeTimer () {
+  switchCountingUp () {
     if (!this.state.isCountingUp) {
       this.setState({
         isCountingUp: true
@@ -174,7 +174,7 @@ class WeekComponent extends React.Component {
           ? <button className="pause-start-button" onClick={() => { this.pause(); }}>Pause</button>
           : <button className="pause-start-button" onClick={() => { this.start(); }}>Start</button>}
         <button className="reset-button" onClick={() => { this.reset(); }}>Reset</button>
-        <button className="reset-button" onClick={() => { this.changeTimer(); }}> change </button>
+        <button className="reset-button" onClick={() => { this.switchCountingUp(); }}> change </button>
         <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}
           currentSeconds={this.state.totalElapsedTime}
           exercise={exercises[this.weekNr][this.dayNr].machine} />
