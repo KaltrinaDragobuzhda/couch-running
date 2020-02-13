@@ -9,7 +9,7 @@ const exercises = {
     2: {
       human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of' +
       'jogging and 90 seconds of walking for a total of 20 minutes.',
-      machine: [1, 1, 1]
+      machine: [4, 3, 2]
     },
     3: {
       human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of' +
