@@ -39,6 +39,7 @@ class WeekComponent extends React.Component {
         badRequest: false,
         isCountingUp: true,
         intervalId: null,
+        isEnded: false,
         intervalIndex: this.calculateIntervalIndex(exercises[this.weekNr][this.dayNr].machine, currentExercisePosition)
       };
     } else {
@@ -63,7 +64,11 @@ class WeekComponent extends React.Component {
   }
 
   start () {
+    if (this.state.isEnded) {
+      this.reset();
+    }
     this.setState({
+      isEnded: false,
       action: this.getStep(this.intervalIndex)
     }, this.startExercise);
   }
@@ -123,7 +128,6 @@ class WeekComponent extends React.Component {
     if (!this.state.isCountingUp) {
       this.setState({
         isCountingUp: true
-
       });
     } else {
       this.setState({
@@ -142,7 +146,9 @@ class WeekComponent extends React.Component {
         if (this.state.intervalIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
           clearInterval(intervalId);
           this.setState({
-            action: 'ended'
+            action: 'ended',
+            intervalId: null,
+            isEnded: true
           });
           setExerciseAsComplete(this.weekNr, this.dayNr);
         } else {
@@ -220,7 +226,7 @@ class WeekComponent extends React.Component {
         </Link>
       </div>;
     } else {
-      return <div> Ju lutem te klikoni tek java dhe dita e duhur!!!! </div>;
+      return <div> Ju lutem te klikoni tek java dhe dita e duhur! </div>;
     }
   }
 }
