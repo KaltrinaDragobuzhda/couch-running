@@ -39,6 +39,7 @@ class WeekComponent extends React.Component {
         badRequest: false,
         isCountingUp: true,
         intervalId: null,
+        isEnded: false,
         intervalIndex: this.calculateIntervalIndex(exercises[this.weekNr][this.dayNr].machine, currentExercisePosition)
       };
     } else {
@@ -63,7 +64,11 @@ class WeekComponent extends React.Component {
   }
 
   start () {
+    if (this.state.isEnded) {
+      this.reset();
+    }
     this.setState({
+      isEnded: false,
       action: this.getStep(this.intervalIndex)
     }, this.startExercise);
   }
@@ -142,7 +147,8 @@ class WeekComponent extends React.Component {
           clearInterval(intervalId);
           this.setState({
             action: 'ended',
-            intervalId: null
+            intervalId: null,
+            isEnded: true
           });
           setExerciseAsComplete(this.weekNr, this.dayNr);
         } else {
