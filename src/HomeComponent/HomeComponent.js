@@ -6,58 +6,61 @@ import { getObject } from '../exerciseStorageService';
 function HomeComponent () {
   return (
     <nav>
-
+      <div className="header">90 DAYS PROGRAM</div>
+      <div className="paragraph">This is a running Exercise that will help
+        you get in shape.
+      </div>
       <div className="nav-links">
-        <div className='week-container'>
-          <span className="week-marker">1</span>
+        <div className='week-container1'>
+          <span className="week-marker">Week 1</span>
           <WeekDayComponent day="1" week="1" />
           <WeekDayComponent day="2" week="1" />
           <WeekDayComponent day="3" week="1" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">2</span>
+        <div className='week-container2'>
+          <span className="week-marker">Week 2</span>
           <WeekDayComponent day="1" week="2" />
           <WeekDayComponent day="2" week="2" />
           <WeekDayComponent day="3" week="2" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">3</span>
+        <div className='week-container3'>
+          <span className="week-marker">Week 3</span>
           <WeekDayComponent day="1" week="3" />
           <WeekDayComponent day="2" week="3" />
           <WeekDayComponent day="3" week="3" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">4</span>
+        <div className='week-container4'>
+          <span className="week-marker">Week 4</span>
           <WeekDayComponent day="1" week="4" />
           <WeekDayComponent day="2" week="4" />
           <WeekDayComponent day="3" week="4" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">5</span>
+        <div className='week-container5'>
+          <span className="week-marker">Week 5</span>
           <WeekDayComponent day="1" week="5" />
           <WeekDayComponent day="2" week="5" />
           <WeekDayComponent day="3" week="5" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">6</span>
+        <div className='week-container6'>
+          <span className="week-marker">Week 6</span>
           <WeekDayComponent day="1" week="6" />
           <WeekDayComponent day="2" week="6" />
           <WeekDayComponent day="3" week="6" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">7</span>
+        <div className='week-container7'>
+          <span className="week-marker">Week 7</span>
           <WeekDayComponent day="1" week="7" />
           <WeekDayComponent day="2" week="7" />
           <WeekDayComponent day="3" week="7" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">8</span>
+        <div className='week-container8'>
+          <span className="week-marker">Week 8</span>
           <WeekDayComponent day="1" week="8" />
           <WeekDayComponent day="2" week="8" />
           <WeekDayComponent day="3" week="8" />
         </div>
-        <div className='week-container'>
-          <span className="week-marker">9</span>
+        <div className='week-container9'>
+          <span className="week-marker">Week 9</span>
           <WeekDayComponent day="1" week="9" />
           <WeekDayComponent day="2" week="9" />
           <WeekDayComponent day="3" week="9" />
@@ -74,18 +77,18 @@ function WeekDayComponent (props) {
 
   if (existingFinishedData) {
     return <div className="weekday-container">
-      <Link className="exercise-link exercise-link-completed" to={`/week/${props.week}/${props.day}`}>{props.day}</Link>
+      <Link className="exercise-link exercise-link-completed" to={`/week/${props.week}/${props.day}`}>{`Day ${props.day}`}</Link>
     </div>;
   }
 
   if (inProgressData) {
     return <div className="weekday-container">
-      <Link className="exercise-link exercise-link-progress" to={`/week/${props.week}/${props.day}`}>{props.day}</Link>
+      <Link className="exercise-link exercise-link-progress" to={`/week/${props.week}/${props.day}`}>{`Day ${props.day}`}</Link>
     </div>;
   }
 
   return <div className="weekday-container">
-    <Link className="exercise-link" to={`/week/${props.week}/${props.day}`}>{props.day}</Link>
+    <Link className="exercise-link" to={`/week/${props.week}/${props.day}`}>{`Day ${props.day}`}</Link>
   </div>;
 }
 
