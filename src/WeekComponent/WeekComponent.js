@@ -1,6 +1,5 @@
 import React from 'react';
 import './WeekComponent.css';
-import { Link } from 'react-router-dom';
 import exercises from '../Exercises';
 import {
   setExerciseInProgress,
@@ -39,6 +38,7 @@ class WeekComponent extends React.Component {
         badRequest: false,
         isCountingUp: true,
         intervalId: null,
+        isEnded: false,
         intervalIndex: this.calculateIntervalIndex(exercises[this.weekNr][this.dayNr].machine, currentExercisePosition)
       };
     } else {
@@ -63,7 +63,11 @@ class WeekComponent extends React.Component {
   }
 
   start () {
+    if (this.state.isEnded) {
+      this.reset();
+    }
     this.setState({
+      isEnded: false,
       action: this.getStep(this.intervalIndex)
     }, this.startExercise);
   }
@@ -123,7 +127,6 @@ class WeekComponent extends React.Component {
     if (!this.state.isCountingUp) {
       this.setState({
         isCountingUp: true
-
       });
     } else {
       this.setState({
@@ -142,7 +145,9 @@ class WeekComponent extends React.Component {
         if (this.state.intervalIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
           clearInterval(intervalId);
           this.setState({
-            action: 'ended'
+            action: 'ended',
+            intervalId: null,
+            isEnded: true
           });
           setExerciseAsComplete(this.weekNr, this.dayNr);
         } else {
@@ -168,36 +173,37 @@ class WeekComponent extends React.Component {
   render () {
     if (!this.state.badRequest) {
       return <div className="week-component-container">
-        <span className='description-week-day'> Week {this.weekNr} exercise {this.dayNr} </span>
+        <span className='description-week-day'> Week {this.weekNr} Exercise {this.dayNr} </span>
         <span className="show-human-exercises">{exercises[this.weekNr][this.dayNr].human}</span>
         {this.state.intervalId
           ? <button className="pause-start-button" onClick={() => { this.pause(); }}>Pause</button>
           : <button className="pause-start-button" onClick={() => { this.start(); }}>Start</button>}
-        <button className="reset-button" onClick={() => { this.reset(); }}>Reset</button>
-        <button className="reset-button" onClick={() => { this.switchCountingUp(); }}> change </button>
-        <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}
+        <button className="reset-switch-button" onClick={() => { this.reset(); }}>Reset</button>
+        <button className="reset-switch-button" onClick={() => { this.switchCountingUp(); }}> Change </button>
+        <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}w
           currentSeconds={this.state.totalElapsedTime}
           exercise={exercises[this.weekNr][this.dayNr].machine} />
-        <div className="container">
-          <div className="state-action">{this.state.action}</div>
+        <div className="exercise-data-container">
           <div className='counting-seconds-container'>
-            <div className="counting-seconds">
+            <div className="counting-seconds-data">
               {this.state.isCountingUp
                 ? <div>
-                  <div>Interval Elapsed Time</div>
-                  <div className='seconds'>{this.convertMinutestoSeconds(this.state.intervalElapsedTime)}
+                  <div className='elapsed-time'>
+                    <div className='exercise-text-data' >Interval Elapsed Time</div>
+                    <div className='seconds'>{this.convertMinutestoSeconds(this.state.intervalElapsedTime)}
+                    </div>
                   </div>
-                  <div> Total Elapsed Time</div>
+                  <div className='exercise-text-data'> Total Elapsed Time</div>
                   <div className='seconds'>{this.convertMinutestoSeconds(this.state.totalElapsedTime)}</div>
                 </div>
                 : <div>
-                  <div> Interval Elapsed Time Left</div>
+                  <div className='exercise-text-data'> Interval Elapsed Time Left</div>
                   <div className='seconds'>
                     {this.convertMinutestoSeconds(
                       exercises[this.weekNr][this.dayNr].machine[this.state.intervalIndex] - this.state.intervalElapsedTime
                     )}
                   </div>
-                  <div> Total Elapsed Time Left</div>
+                  <div className='exercise-text-data'> Total Elapsed Time Left</div>
                   <div className='seconds'> {
                     this.convertMinutestoSeconds(
                       this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine) - this.state.totalElapsedTime
@@ -206,21 +212,21 @@ class WeekComponent extends React.Component {
                 </div>
               }
             </div>
-            <div className="counting-seconds"> Exercise time <div className='seconds'>
-              {
-                this.convertMinutestoSeconds(
-                  this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine)
-                )
-              }</div>
+            <div className="counting-seconds exercise-time">
+              <div className='exercise-text-data'> Exercise time </div>
+              <div className='seconds'>
+                {
+                  this.convertMinutestoSeconds(
+                    this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine)
+                  )
+                }</div>
             </div>
           </div>
+          <div className="state-action">{this.state.action}</div>
         </div>
-        <Link className="link-style" style={this.navStyle} to='/'>
-          <div className="back-to-home">Back to home</div>
-        </Link>
       </div>;
     } else {
-      return <div> Ju lutem te klikoni tek java dhe dita e duhur!!!! </div>;
+      return <div> Ju lutem te klikoni tek java dhe dita e duhur! </div>;
     }
   }
 }
