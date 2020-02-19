@@ -21,12 +21,12 @@ const exercises = {
     1: {
       human: 'Brisk five-minute warmups walks.Then alternate 90 seconds of' +
       'jogging and two minutes of walking for a total of 20 minutes.',
-      machine: [300, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
+      machine: [1, 1, 1]
     },
     2: {
       human: 'Brisk five-minute warmup walk.Then alternate 90 seconds of' +
       'jogging and two minutes of walking for a total of 20 minutes.',
-      machine: [300, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
+      machine: [1, 1, 1]
     },
     3: {
       human: 'Brisk five-minute warmup walk.Then alternate 90 seconds of' +
@@ -59,7 +59,7 @@ const exercises = {
       human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes)' +
       'Walk 1/8 mile (or 90 seconds) •Jog 1/2 mile (or 5 minutes) Walk 1/4 mile (or 2-1/2 minutes)' +
       'Jog 1/4 mile (or 3 minutes) • Walk 1/8 mile (or 90 seconds) • Jog 1/2 mile (or 5 minutes)',
-      machine: [300, 180, 90, 300, 120, 180, 90, 300]
+      machine: [1, 1, 1]
     },
     2: {
       human: 'Brisk five-minute warmup walk, then: •Jog 1/4 mile (or 3 minutes).' +
@@ -79,7 +79,7 @@ const exercises = {
     1: {
       human: 'Brisk five-minute warmup walk, then: Jog 3/4 mile (or 8 minutes) Walk 1/2 mile (or 5 minutes)' +
       'Jog 3/4 mile (or 8 minutes).Brisk five-minute warmup walk, then jog two miles (or 20 minutes) with no walking.',
-      machine: [300, 1200]
+      machine: [1, 1, 1]
     },
     2: {
       human: 'Brisk five-minute warmup walk, then: Jog 3/4 mile (or 8 minutes) Walk 1/2 mile (or 5 minutes)' +
@@ -95,7 +95,7 @@ const exercises = {
     1: {
       human: 'Brissk five-minute warmup walk, then: • Jog 1/2 mile(or 5 minutes) Walk 1/4 mile (or 3 minutes)' +
       'Jog 3/4 mile (or 8 minutes) Walk 1/4 mile (or 3 minutes) • Jog 1/2 mile (or 5 minutes)',
-      machine: [300, 180, 480, 180, 300]
+      machine: [1, 1, 1]
     },
     2: {
       human: 'Brisk five-minute warmup walk, then: • Jog 1 mile minutes) Walk 1/4 mile (or 3 minutes).' +
@@ -104,7 +104,7 @@ const exercises = {
     },
     3: {
       human: 'Brisk five-minute warmup walk, then: • Jog 2-1/4 mile or 22 minutes with no walking.',
-      machine: [300, 1320]
+      machine: [1, 1]
     }
   },
   7: {

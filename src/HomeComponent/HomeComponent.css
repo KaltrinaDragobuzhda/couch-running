@@ -1,32 +1,35 @@
+.body{
+  width: 100%;
+}
+
 .header{
-  margin-top: 24.7pt;
-  size: 19.8pt;
+  margin-top: 45.8px;
+  size: 19.8px;
   font-weight: bolder;
   font-family: "Arial Black", sans-serif;
-  margin-left: 33px;
-  width: 251pt;
-  letter-spacing: 1.07pt;
+  margin-left: 24.7px;
+  width: 251px;
+  letter-spacing: 1.07px;
 }
 
 .paragraph{
-  size: 16pt;
-  letter-spacing: 0.65pt;
-  line-height: 18pt;
-  width: 90%;
+  size: 16px;
+  letter-spacing: 0.65px;
+  line-height: 18px;
+  margin-top: 2.2px;
+  width: 87%;
   color: gray;
-  margin-left: 33px;
+  margin-left: 24.7px;
 }
 
-.week-container1 {
-  height: 70px;
+.week-container{
+  height: 64.1px;
   display: flex;
   width: 90%;
   display: flex;
   align-items: center;
-  margin-top: 25pt;
+  margin-top: 29.9px;
   border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255, 230, 118));
-  /* background-color: pink; */
 }
 
 .nav-links{
@@ -35,6 +38,7 @@
 
 .weekday-container {
   display: flex;
+  height: 100%;
   flex-grow: 1;
   margin-left: 15px;
   justify-content: center;
@@ -43,15 +47,19 @@
 }
 
 .week-marker {
+  font-family: Text;
+  font-weight: bold;
   line-height: 72px;
   text-align: center;
-  margin-left: 28px;
-  size: 14pt;
-  letter-spacing: 0.76pt;
+  margin-left: 33px;
+  size: 1px;
+  letter-spacing: 0.76px;
   color: rgb(89 85 85);
 }
 
-.week-container1 .exercise-link {
+
+
+.week-container .exercise-link {
   background-color: rgb(213 212 212);
   color: white;
   text-decoration: none;
@@ -62,10 +70,6 @@
   text-align: center;
   justify-content: center;
   line-height: 50px;
-}
-
-.week-container1 .exercise-link:hover{
-  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .state-description:first-child{
@@ -85,296 +89,287 @@
   display: flex;
   flex-direction: row;
 }
+/* week 1 */
+.week-container.week-container-one{
 
-.week-container1 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+  margin-top: 25px;
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255,209,103,0.85));;
 }
 
-.week-container1 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 2 */
-.week-container2 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));
-  /* background-color: pink; */
+.week-container.week-container-one.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container2 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+.week-container.week-container-one.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container2 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+.week-container.week-container-one.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container2 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 2 */
-
-/* WEEK 3 */
-.week-container3 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(155 115 218));
-  /* background-color: pink; */
+.week-container.week-container-one.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container3 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+
+.week-container.week-container-two.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container3 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+.week-container.week-container-two.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container3 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 3 */
-
-
-/* WEEK 4 */
-.week-container4 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(118 212 159));
-  /* background-color: pink; */
+.week-container.week-container-two.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container4 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+.week-container.week-container-two.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container4 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+
+.week-container.week-container-three.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container4 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 4 */
-
-
-/* WEEK 5 */
-.week-container5 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(108 188 255));
-  /* background-color: pink; */
+.week-container.week-container-three.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container5 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+.week-container.week-container-three.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container5 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+.week-container.week-container-three.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container5 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 5 */
 
-
-/* WEEK 6 */
-.week-container6 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));
-  /* background-color: pink; */
+.week-container.week-container-four.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container6 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+.week-container.week-container-four.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container6 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+.week-container.week-container-four.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container6 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 6 */
-
-
-/* WEEK 7 */
-.week-container7 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255, 230, 118));
-  /* background-color: pink; */
+.week-container.week-container-four.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container7 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+
+.week-container.week-container-five.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container7 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+.week-container.week-container-five.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container7 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 7 */
-
-
-/* WEEK 8 */
-.week-container8 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255, 230, 118));
-  /* background-color: pink; */
+.week-container.week-container-five.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container8 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+.week-container.week-container-five.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container8 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+.week-container.week-container-six.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container8 .exercise-link-progress {
-  border: 1px solid red;
-}
-/* WEEK 8 */
-
-
-/* WEEK 9 */
-.week-container9 {
-  height: 70px;
-  display: flex;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin-top: 25pt;
-  border-radius: 40px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255, 230, 118));
-  /* background-color: pink; */
+.week-container.week-container-six.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container9 .exercise-link {
-  background-color: rgb(213 212 212);
-  color: white;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  line-height: 50px;
+.week-container.week-container-six.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container9 .exercise-link-completed {
-  background-color: rgba(255,178,0,0.85);
+.week-container.week-container-six.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.week-container9 .exercise-link-progress {
-  border: 1px solid red;
+.week-container.week-container-seven.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
 }
-/* WEEK 9 */
+
+.week-container.week-container-seven.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-seven.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-seven.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-eight.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-eight.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-eight.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-eight.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-nine.size0{
+  background-size: 25% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-nine.size1{
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-nine.size2{
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container.week-container-nine.size3{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.week-container-one .exercise-link-completed {
+  background-color: rgb(255,178,0,0.85);
+}
+
+.week-container-one .exercise-link-progress {
+  border: 2px solid rgb(255,178,0,0.85);
+
+}
+/* week 1 */
+
+/* week 2 */
+.week-container.week-container-two{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+}
+
+.week-container-two .exercise-link-completed {
+  background-color: rgb(255 178 178);
+}
+
+.week-container-two .exercise-link-progress {
+  border: 2px solid rgb(239 134 134);
+}
+/* week 2 */
+
+/* week 3 */
+.week-container.week-container-three{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(155 115 218));;
+}
+
+.week-container-three .exercise-link-completed {
+  background-color: rgb(168 134 223);
+}
+
+.week-container-three .exercise-link-progress {
+  border: 2px solid rgb(168 134 223);
+}
+/* week 3 */
+
+
+/* week 4 */
+.week-container.week-container-four{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(118 212 159));;
+}
+
+.week-container-four .exercise-link-completed {
+  background-color: rgb(118 212 159);
+}
+
+.week-container-four .exercise-link-progress {
+  border: 2px solid rgb(118 212 159);
+}
+/* week 4 */
+
+/* week 5 */
+.week-container.week-container-five{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(108 188 255));;
+}
+
+.week-container-five .exercise-link-completed {
+  background-color: rgb(108 188 255);
+}
+
+.week-container-five .exercise-link-progress {
+  border: 2px solid rgb(108 188 255);
+}
+/* week 5 */
+
+/* week 6 */
+.week-container.week-container-six{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-six .exercise-link-completed {
+  background-color: rgb(156 183 255);
+}
+
+.week-container-six .exercise-link-progress {
+  border: 2px solid rgb(156 183 255);
+}
+/* week 6 */
+
+.week-container.week-container-seven{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+}
+
+.week-container.week-container-eight{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+}
+
+.week-container.week-container-nine{
+  margin-bottom: 20px;
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+}
