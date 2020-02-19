@@ -1,30 +1,27 @@
+/* eslint-disable eqeqeq */
 import React from 'react';
 import './HomeComponent.css';
 import { Link } from 'react-router-dom';
 import { getObject } from '../exerciseStorageService';
 
 function HomeComponent () {
-  function weekStatus (n) {
+  function getWeekStatus (weekNumber) {
     const exerciseData = getObject();
-    const weekOneDayOneIsFinished = !!(exerciseData.finished.find(x => x[0] == n && x[1] == 1));
-    const weekOneDayTwoIsFinished = !!(exerciseData.finished.find(x => x[0] == n && x[1] == 2));
-    const weekOneDayThreeIsFinished = !!(exerciseData.finished.find(x => x[0] == n && x[1] == 3));
+    const isDayOneFinished = !!(exerciseData.finished.find(x => x[0] == weekNumber && x[1] == 1));
+    const isDayTwoFinished = !!(exerciseData.finished.find(x => x[0] == weekNumber && x[1] == 2));
+    const isDayThreeFinished = !!(exerciseData.finished.find(x => x[0] == weekNumber && x[1] == 3));
 
-    let weekOneStatus = 0;
-    if (weekOneDayOneIsFinished) {
-      weekOneStatus = 1;
-      return weekOneStatus;
+    if (isDayOneFinished) {
+      return 1;
     }
-    if (weekOneDayTwoIsFinished) {
-      weekOneStatus = 2;
-      return weekOneStatus;
+    if (isDayTwoFinished) {
+      return 2;
     }
 
-    if (weekOneDayThreeIsFinished) {
-      weekOneStatus = 3;
-      return weekOneStatus;
+    if (isDayThreeFinished) {
+      return 3;
     }
-    if (!weekOneDayOneIsFinished && !weekOneDayOneIsFinished && !weekOneDayThreeIsFinished) {
+    if (!isDayOneFinished && !isDayTwoFinished && !isDayThreeFinished) {
       return 0;
     }
   }
@@ -36,55 +33,55 @@ function HomeComponent () {
       </div>
       <div className="nav-links">
 
-        <div className={'week-container week-container-one size' + weekStatus(1)}>
+        <div className={'week-container week-container-one size' + getWeekStatus(1)}>
           <span className="week-marker">Week 1</span>
           <WeekDayComponent day="1" week="1" />
           <WeekDayComponent day="2" week="1" />
           <WeekDayComponent day="3" week="1" />
         </div>
-        <div className={'week-container week-container-two size' + weekStatus(2)}>
+        <div className={'week-container week-container-two size' + getWeekStatus(2)}>
           <span className="week-marker">Week 2</span>
           <WeekDayComponent day="1" week="2" />
           <WeekDayComponent day="2" week="2" />
           <WeekDayComponent day="3" week="2" />
         </div>
-        <div className={'week-container week-container-three size' + weekStatus(3)}>
+        <div className={'week-container week-container-three size' + getWeekStatus(3)}>
           <span className="week-marker">Week 3</span>
           <WeekDayComponent day="1" week="3" />
           <WeekDayComponent day="2" week="3" />
           <WeekDayComponent day="3" week="3" />
         </div>
-        <div className={'week-container week-container-four size' + weekStatus(4)}>
+        <div className={'week-container week-container-four size' + getWeekStatus(4)}>
           <span className="week-marker">Week 4</span>
           <WeekDayComponent day="1" week="4" />
           <WeekDayComponent day="2" week="4" />
           <WeekDayComponent day="3" week="4" />
         </div>
-        <div className={'week-container week-container-five size' + weekStatus(5)}>
+        <div className={'week-container week-container-five size' + getWeekStatus(5)}>
           <span className="week-marker">Week 5</span>
           <WeekDayComponent day="1" week="5" />
           <WeekDayComponent day="2" week="5" />
           <WeekDayComponent day="3" week="5" />
         </div>
-        <div className={'week-container week-container-six size' + weekStatus(6)}>
+        <div className={'week-container week-container-six size' + getWeekStatus(6)}>
           <span className="week-marker">Week 6</span>
           <WeekDayComponent day="1" week="6" />
           <WeekDayComponent day="2" week="6" />
           <WeekDayComponent day="3" week="6" />
         </div>
-        <div className={'week-container week-container-seven size' + weekStatus(7)}>
+        <div className={'week-container week-container-seven size' + getWeekStatus(7)}>
           <span className="week-marker">Week 7</span>
           <WeekDayComponent day="1" week="7" />
           <WeekDayComponent day="2" week="7" />
           <WeekDayComponent day="3" week="7" />
         </div>
-        <div className={'week-container week-container-eight size' + weekStatus(8)}>
+        <div className={'week-container week-container-eight size' + getWeekStatus(8)}>
           <span className="week-marker">Week 8</span>
           <WeekDayComponent day="1" week="8" />
           <WeekDayComponent day="2" week="8" />
           <WeekDayComponent day="3" week="8" />
         </div>
-        <div className={'week-container week-container-nine size' + weekStatus(9)}>
+        <div className={'week-container week-container-nine size' + getWeekStatus(9)}>
           <span className="week-marker">Week 9</span>
           <WeekDayComponent day="1" week="9" />
           <WeekDayComponent day="2" week="9" />

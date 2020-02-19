@@ -26,10 +26,10 @@
   height: 64.1px;
   display: flex;
   width: 90%;
-  display: flex;
   align-items: center;
   margin-top: 29.9px;
   border-radius: 40px;
+  background-repeat: no-repeat;
 }
 
 .nav-links{
@@ -56,8 +56,6 @@
   letter-spacing: 0.76px;
   color: rgb(89 85 85);
 }
-
-
 
 .week-container .exercise-link {
   background-color: rgb(213 212 212);
@@ -91,193 +89,156 @@
 }
 /* week 1 */
 .week-container.week-container-one{
-
   margin-top: 25px;
   background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255,209,103,0.85));;
 }
 
 .week-container.week-container-one.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-one.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-one.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-one.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 
 .week-container.week-container-two.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-two.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-two.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-two.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 
 .week-container.week-container-three.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-three.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-three.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-three.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 
 .week-container.week-container-four.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-four.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-four.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-four.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 
 .week-container.week-container-five.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-five.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-five.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-five.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-six.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-six.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-six.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-six.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-seven.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-seven.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-seven.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-seven.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-eight.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-eight.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-eight.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-eight.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-nine.size0{
   background-size: 25% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-nine.size1{
   background-size: 50% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-nine.size2{
   background-size: 75% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container.week-container-nine.size3{
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .week-container-one .exercise-link-completed {
@@ -361,15 +322,57 @@
 }
 /* week 6 */
 
+/* week 7 */
 .week-container.week-container-seven{
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-seven .exercise-link-completed {
+  background-color: rgb(237, 246, 215);
+}
+
+.week-container-seven .exercise-link-progress {
+  border: 2px solid rgb(237, 246, 215);
+}
+/* week 7 */
+
+/* week 8 */
+.week-container.week-container-eight{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-eight .exercise-link-completed {
+  background-color: rgb(247, 174, 248);
+}
+
+.week-container-eight .exercise-link-progress {
+  border: 2px solid rgb(247, 174, 248);
+}
+/* week 8 */
+
+/* week 9 */
+.week-container.week-container-nine{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-nine .exercise-link-completed {
+  background-color: rgb(162, 153, 158);
+}
+
+.week-container-nine .exercise-link-progress {
+  border: 2px solid rgb(162, 153, 158);
+}
+/* week 9 */
+
+.week-container.week-container-seven{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(237, 246, 215));;
 }
 
 .week-container.week-container-eight{
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(247, 174, 248));;
 }
 
 .week-container.week-container-nine{
   margin-bottom: 20px;
-  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(162, 153, 158));;
 }
