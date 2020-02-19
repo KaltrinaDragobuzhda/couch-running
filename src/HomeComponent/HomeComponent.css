@@ -93,151 +93,19 @@
   background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255,209,103,0.85));;
 }
 
-.week-container.week-container-one.size0{
+.size0{
   background-size: 25% 100%;
 }
 
-.week-container.week-container-one.size1{
+.size1{
   background-size: 50% 100%;
 }
 
-.week-container.week-container-one.size2{
+.size2{
   background-size: 75% 100%;
 }
 
-.week-container.week-container-one.size3{
-  background-size: 100% 100%;
-}
-
-
-.week-container.week-container-two.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-two.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-two.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-two.size3{
-  background-size: 100% 100%;
-}
-
-
-.week-container.week-container-three.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-three.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-three.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-three.size3{
-  background-size: 100% 100%;
-}
-
-
-.week-container.week-container-four.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-four.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-four.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-four.size3{
-  background-size: 100% 100%;
-}
-
-
-.week-container.week-container-five.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-five.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-five.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-five.size3{
-  background-size: 100% 100%;
-}
-
-.week-container.week-container-six.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-six.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-six.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-six.size3{
-  background-size: 100% 100%;
-}
-
-.week-container.week-container-seven.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-seven.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-seven.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-seven.size3{
-  background-size: 100% 100%;
-}
-
-.week-container.week-container-eight.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-eight.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-eight.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-eight.size3{
-  background-size: 100% 100%;
-}
-
-.week-container.week-container-nine.size0{
-  background-size: 25% 100%;
-}
-
-.week-container.week-container-nine.size1{
-  background-size: 50% 100%;
-}
-
-.week-container.week-container-nine.size2{
-  background-size: 75% 100%;
-}
-
-.week-container.week-container-nine.size3{
+.size3{
   background-size: 100% 100%;
 }
 
