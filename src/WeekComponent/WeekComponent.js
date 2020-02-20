@@ -64,23 +64,29 @@ class WeekComponent extends React.Component {
 
   start () {
     if (this.state.isEnded) {
-      this.reset();
+      this.reset(() => {
+        this.setState({
+          isEnded: false,
+          action: this.getStep(this.state.intervalIndex)
+        }, this.startExercise);
+      });
+    } else {
+      this.setState({
+        isEnded: false,
+        action: this.getStep(this.state.intervalIndex)
+      }, this.startExercise);
     }
-    this.setState({
-      isEnded: false,
-      action: this.getStep(this.intervalIndex)
-    }, this.startExercise);
   }
 
-  reset () {
+  reset (cb) {
     clearInterval(this.state.intervalId);
     this.setState({
       intervalId: null,
+      intervalIndex: 0,
       intervalElapsedTime: 0,
       totalElapsedTime: 0,
-      intervalIndex: 0,
       action: 'idle'
-    });
+    }, cb);
     resetExercise(this.weekNr, this.dayNr);
   }
 
@@ -140,6 +146,7 @@ class WeekComponent extends React.Component {
   }
 
   startExercise () {
+    console.log(this.state.intervalIndex);
     const intervalId = setInterval(() => {
       if (this.state.intervalElapsedTime === exercises[this.weekNr][this.dayNr].machine[this.state.intervalIndex]) {
         if (this.state.intervalIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
@@ -178,9 +185,8 @@ class WeekComponent extends React.Component {
         {this.state.intervalId
           ? <button className="pause-start-button" onClick={() => { this.pause(); }}>Pause</button>
           : <button className="pause-start-button" onClick={() => { this.start(); }}>Start</button>}
-        <button className="reset-switch-button" onClick={() => { this.reset(); }}>Reset</button>
-        <button className="reset-switch-button" onClick={() => { this.switchCountingUp(); }}> Change </button>
-        <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}w
+        <button className="reset-button" onClick={() => { this.reset(); }}>Reset</button>
+        <ExcerciseProgressSliderComponent currentPosition={this.state.totalElapsedTime}
           currentSeconds={this.state.totalElapsedTime}
           exercise={exercises[this.weekNr][this.dayNr].machine} />
         <div className="exercise-data-container">
@@ -189,21 +195,21 @@ class WeekComponent extends React.Component {
               {this.state.isCountingUp
                 ? <div>
                   <div className='elapsed-time'>
-                    <div className='exercise-text-data' >Interval Elapsed Time</div>
+                    <div className='exercise-text-data'>Interval Time</div>
                     <div className='seconds'>{this.convertMinutestoSeconds(this.state.intervalElapsedTime)}
                     </div>
                   </div>
-                  <div className='exercise-text-data'> Total Elapsed Time</div>
+                  <div className='exercise-text-data'> Elapsed Time</div>
                   <div className='seconds'>{this.convertMinutestoSeconds(this.state.totalElapsedTime)}</div>
                 </div>
                 : <div>
-                  <div className='exercise-text-data'> Interval Elapsed Time Left</div>
+                  <div className='exercise-text-data'> Remaining Interval</div>
                   <div className='seconds'>
                     {this.convertMinutestoSeconds(
                       exercises[this.weekNr][this.dayNr].machine[this.state.intervalIndex] - this.state.intervalElapsedTime
                     )}
                   </div>
-                  <div className='exercise-text-data'> Total Elapsed Time Left</div>
+                  <div className='exercise-text-data'> Remaining Total</div>
                   <div className='seconds'> {
                     this.convertMinutestoSeconds(
                       this.getTotalExerciseTime(exercises[this.weekNr][this.dayNr].machine) - this.state.totalElapsedTime
@@ -212,8 +218,10 @@ class WeekComponent extends React.Component {
                 </div>
               }
             </div>
-            <div className="counting-seconds exercise-time">
-              <div className='exercise-text-data'> Exercise time </div>
+            <div className="total-exercise-time">
+              <button className="switch-button" onClick={() => { this.switchCountingUp(); }}> Change </button>
+
+              <div className='exercise-text-data'>Duration</div>
               <div className='seconds'>
                 {
                   this.convertMinutestoSeconds(
@@ -226,7 +234,7 @@ class WeekComponent extends React.Component {
         </div>
       </div>;
     } else {
-      return <div> Ju lutem te klikoni tek java dhe dita e duhur! </div>;
+      return <div> Please choose the right week and day when clicking! </div>;
     }
   }
 }
