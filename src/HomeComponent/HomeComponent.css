@@ -1,25 +1,65 @@
-.week-container {
-  height: 70px;
+.body{
+  width: 100%;
+}
+
+.header{
+  margin-top: 45.8px;
+  size: 19.8px;
+  font-weight: bolder;
+  font-family: "Arial Black", sans-serif;
+  margin-left: 24.7px;
+  width: 251px;
+  letter-spacing: 1.07px;
+}
+
+.paragraph{
+  size: 16px;
+  letter-spacing: 0.65px;
+  line-height: 18px;
+  margin-top: 2.2px;
+  width: 87%;
+  color: gray;
+  margin-left: 24.7px;
+}
+
+.week-container{
+  height: 64.1px;
   display: flex;
+  width: 90%;
+  align-items: center;
+  margin-top: 29.9px;
+  border-radius: 40px;
+  background-repeat: no-repeat;
+}
+
+.nav-links{
+  text-align: -webkit-center;
 }
 
 .weekday-container {
   display: flex;
+  height: 100%;
   flex-grow: 1;
+  margin-left: 15px;
   justify-content: center;
   align-items: center;
+  
 }
 
 .week-marker {
-  width: 30px;
+  font-family: Text;
+  font-weight: bold;
   line-height: 72px;
   text-align: center;
-  border-right: 1px solid lightblue;
+  margin-left: 33px;
+  size: 1px;
+  letter-spacing: 0.76px;
+  color: rgb(89 85 85);
 }
 
 .week-container .exercise-link {
-  background-color: lightblue;
-  color: black;
+  background-color: rgb(213 212 212);
+  color: white;
   text-decoration: none;
   height: 50px;
   width: 50px;
@@ -47,11 +87,160 @@
   display: flex;
   flex-direction: row;
 }
-
-.week-container .exercise-link-completed {
-  background-color: green; 
+/* week 1 */
+.week-container.week-container-one{
+  margin-top: 25px;
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255,209,103,0.85));;
 }
 
-.week-container .exercise-link-progress {
-  background-color: lightgrey; 
+.size0{
+  background-size: 25% 100%;
+}
+
+.size1{
+  background-size: 50% 100%;
+}
+
+.size2{
+  background-size: 75% 100%;
+}
+
+.size3{
+  background-size: 100% 100%;
+}
+
+.week-container-one .exercise-link-completed {
+  background-color: rgb(255,178,0,0.85);
+}
+
+.week-container-one .exercise-link-progress {
+  border: 2px solid rgb(255,178,0,0.85);
+
+}
+/* week 1 */
+
+/* week 2 */
+.week-container.week-container-two{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(255 178 178));;
+}
+
+.week-container-two .exercise-link-completed {
+  background-color: rgb(255 178 178);
+}
+
+.week-container-two .exercise-link-progress {
+  border: 2px solid rgb(239 134 134);
+}
+/* week 2 */
+
+/* week 3 */
+.week-container.week-container-three{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(155 115 218));;
+}
+
+.week-container-three .exercise-link-completed {
+  background-color: rgb(168 134 223);
+}
+
+.week-container-three .exercise-link-progress {
+  border: 2px solid rgb(168 134 223);
+}
+/* week 3 */
+
+
+/* week 4 */
+.week-container.week-container-four{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(118 212 159));;
+}
+
+.week-container-four .exercise-link-completed {
+  background-color: rgb(118 212 159);
+}
+
+.week-container-four .exercise-link-progress {
+  border: 2px solid rgb(118 212 159);
+}
+/* week 4 */
+
+/* week 5 */
+.week-container.week-container-five{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(108 188 255));;
+}
+
+.week-container-five .exercise-link-completed {
+  background-color: rgb(108 188 255);
+}
+
+.week-container-five .exercise-link-progress {
+  border: 2px solid rgb(108 188 255);
+}
+/* week 5 */
+
+/* week 6 */
+.week-container.week-container-six{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-six .exercise-link-completed {
+  background-color: rgb(156 183 255);
+}
+
+.week-container-six .exercise-link-progress {
+  border: 2px solid rgb(156 183 255);
+}
+/* week 6 */
+
+/* week 7 */
+.week-container.week-container-seven{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-seven .exercise-link-completed {
+  background-color: rgb(237, 246, 215);
+}
+
+.week-container-seven .exercise-link-progress {
+  border: 2px solid rgb(237, 246, 215);
+}
+/* week 7 */
+
+/* week 8 */
+.week-container.week-container-eight{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-eight .exercise-link-completed {
+  background-color: rgb(247, 174, 248);
+}
+
+.week-container-eight .exercise-link-progress {
+  border: 2px solid rgb(247, 174, 248);
+}
+/* week 8 */
+
+/* week 9 */
+.week-container.week-container-nine{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(156 183 255));;
+}
+
+.week-container-nine .exercise-link-completed {
+  background-color: rgb(162, 153, 158);
+}
+
+.week-container-nine .exercise-link-progress {
+  border: 2px solid rgb(162, 153, 158);
+}
+/* week 9 */
+
+.week-container.week-container-seven{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(237, 246, 215));;
+}
+
+.week-container.week-container-eight{
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(247, 174, 248));;
+}
+
+.week-container.week-container-nine{
+  margin-bottom: 20px;
+  background-image: linear-gradient(to left, rgba(255,233,220,0), rgb(162, 153, 158));;
 }
