@@ -51,7 +51,7 @@ const exercises = {
       human: 'Brisk five-minute warmup walk, then do two repetitions of' +
       'the following:Jog 200 yards (or 90 seconds) Walk 200 yards (or 90 seconds)' +
       'Jog 400 yards (or 3 minutes) Walk 400 yards (or three minutes)',
-      machine: [300, 90, 90, 180, 180]
+      machine: [1, 1]
     }
   },
   4: {

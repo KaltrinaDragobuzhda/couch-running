@@ -3,6 +3,7 @@ import React from 'react';
 import './HomeComponent.css';
 import { Link } from 'react-router-dom';
 import { getObject } from '../exerciseStorageService';
+import { DAY_ONE, DAY_TWO, DAY_THREE } from '../constants.js';
 
 function HomeComponent () {
   function getWeekStatus (weekNumber) {
@@ -11,19 +12,17 @@ function HomeComponent () {
     const isDayTwoFinished = !!(exerciseData.finished.find(x => x[0] == weekNumber && x[1] == 2));
     const isDayThreeFinished = !!(exerciseData.finished.find(x => x[0] == weekNumber && x[1] == 3));
 
-    if (isDayOneFinished) {
-      return 1;
+    if (isDayThreeFinished) {
+      return DAY_THREE;
     }
     if (isDayTwoFinished) {
-      return 2;
+      return DAY_TWO;
     }
 
-    if (isDayThreeFinished) {
-      return 3;
+    if (isDayOneFinished) {
+      return DAY_ONE;
     }
-    if (!isDayOneFinished && !isDayTwoFinished && !isDayThreeFinished) {
-      return 0;
-    }
+    return 0;
   }
   return (
     <nav>
