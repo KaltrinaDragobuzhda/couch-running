@@ -146,7 +146,6 @@ class WeekComponent extends React.Component {
   }
 
   startExercise () {
-    console.log(this.state.intervalIndex);
     const intervalId = setInterval(() => {
       if (this.state.intervalElapsedTime === exercises[this.weekNr][this.dayNr].machine[this.state.intervalIndex]) {
         if (this.state.intervalIndex === exercises[this.weekNr][this.dayNr].machine.length - 1) {
