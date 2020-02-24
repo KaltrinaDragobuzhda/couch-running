@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/couch-running/static/css/main.ad12d19b.chunk.css",
-    "main.js": "/couch-running/static/js/main.153a239c.chunk.js",
-    "main.js.map": "/couch-running/static/js/main.153a239c.chunk.js.map",
-    "runtime-main.js": "/couch-running/static/js/runtime-main.06ecf454.js",
-    "runtime-main.js.map": "/couch-running/static/js/runtime-main.06ecf454.js.map",
-    "static/js/2.46aa5964.chunk.js": "/couch-running/static/js/2.46aa5964.chunk.js",
-    "static/js/2.46aa5964.chunk.js.map": "/couch-running/static/js/2.46aa5964.chunk.js.map",
-    "index.html": "/couch-running/index.html",
-    "precache-manifest.530733de23d58c6d94ca221c5d979452.js": "/couch-running/precache-manifest.530733de23d58c6d94ca221c5d979452.js",
-    "service-worker.js": "/couch-running/service-worker.js",
-    "static/css/main.ad12d19b.chunk.css.map": "/couch-running/static/css/main.ad12d19b.chunk.css.map",
-    "static/js/2.46aa5964.chunk.js.LICENSE": "/couch-running/static/js/2.46aa5964.chunk.js.LICENSE"
+    "main.css": "/KaltrinaDragobuzhda/couch-running/static/css/main.78bf6210.chunk.css",
+    "main.js": "/KaltrinaDragobuzhda/couch-running/static/js/main.076909d1.chunk.js",
+    "main.js.map": "/KaltrinaDragobuzhda/couch-running/static/js/main.076909d1.chunk.js.map",
+    "runtime-main.js": "/KaltrinaDragobuzhda/couch-running/static/js/runtime-main.7528791f.js",
+    "runtime-main.js.map": "/KaltrinaDragobuzhda/couch-running/static/js/runtime-main.7528791f.js.map",
+    "static/js/2.d100f19e.chunk.js": "/KaltrinaDragobuzhda/couch-running/static/js/2.d100f19e.chunk.js",
+    "static/js/2.d100f19e.chunk.js.map": "/KaltrinaDragobuzhda/couch-running/static/js/2.d100f19e.chunk.js.map",
+    "index.html": "/KaltrinaDragobuzhda/couch-running/index.html",
+    "precache-manifest.fafa83955d7c04b364a448bd5eec42a4.js": "/KaltrinaDragobuzhda/couch-running/precache-manifest.fafa83955d7c04b364a448bd5eec42a4.js",
+    "service-worker.js": "/KaltrinaDragobuzhda/couch-running/service-worker.js",
+    "static/css/main.78bf6210.chunk.css.map": "/KaltrinaDragobuzhda/couch-running/static/css/main.78bf6210.chunk.css.map",
+    "static/js/2.d100f19e.chunk.js.LICENSE": "/KaltrinaDragobuzhda/couch-running/static/js/2.d100f19e.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.06ecf454.js",
-    "static/js/2.46aa5964.chunk.js",
-    "static/css/main.ad12d19b.chunk.css",
-    "static/js/main.153a239c.chunk.js"
+    "static/js/runtime-main.7528791f.js",
+    "static/js/2.d100f19e.chunk.js",
+    "static/css/main.78bf6210.chunk.css",
+    "static/js/main.076909d1.chunk.js"
   ]
 }
