@@ -10,19 +10,15 @@
     background: #ff2450;
 }
 
-.exercise-slider-item {
+ .exercise-slider-item {
     display: inline-block;
     font-size: 0;
     height: 20px;
     margin-top: 20px;
-}
+} 
 
 .exercise-slider {
     position: relative;
-    height: 50px;
-    line-height: 0;
-    font-size: 0;
-    /* overflow: hidden; */
 }
 
 .exercise-marker {
@@ -31,10 +27,6 @@
     height: 35px;
     background: #b88dc4;
     border-radius: 50%;
-    top: 23%;
-    margin-left: -23px;
-}
-
-.encapsulate{
-    padding: 20px;
+    top: 12.5px;
+    margin-left: -17.5px;
 }
