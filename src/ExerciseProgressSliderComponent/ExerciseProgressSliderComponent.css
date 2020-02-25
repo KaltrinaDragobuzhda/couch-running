@@ -1,13 +1,13 @@
 .exercise-slider-item:nth-child(odd) {
-    background: #eaff2e;
+    background: 	#CFB1B7;
 }
 
 .exercise-slider-item:nth-child(even) {
-    background: #56d176;
+    background: #89A6FB;
 }
 
 .exercise-slider-item:first-child {
-    background: #ff2450;
+    background: #06D6A0;
 }
 
  .exercise-slider-item {
