@@ -47,7 +47,7 @@
 }
 
 .week-marker {
-  font-family: Text;
+  font-family: sans-serif;
   font-weight: bold;
   line-height: 72px;
   text-align: center;
@@ -68,6 +68,7 @@
   text-align: center;
   justify-content: center;
   line-height: 50px;
+  align-items: center;
 }
 
 .state-description:first-child{

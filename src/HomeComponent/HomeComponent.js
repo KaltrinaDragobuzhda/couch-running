@@ -26,9 +26,8 @@ function HomeComponent () {
   }
   return (
     <nav>
-      <div className="header">90 DAYS PROGRAM</div>
-      <div className="paragraph">This is a running Exercise that will help
-        you get in shape.
+      <div className="header">27 DAYS PROGRAM</div>
+      <div className="paragraph">Running application designed to give you the best results.
       </div>
       <div className="nav-links">
 
