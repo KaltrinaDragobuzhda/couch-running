@@ -4,12 +4,12 @@ const exercises = {
     1: {
       human: 'Brisk five-minute warmup walk.Then alternate 60 seconds ' +
      'of jogging and 90 seconds of walking for a total of 20 minutes.',
-      machine: [300, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
+      machine: [1, 1, 1]
     },
     2: {
       human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of ' +
       'jogging and 90 seconds of walking for a total of 20 minutes.',
-      machine: [300, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90, 60, 90]
+      machine: [1, 1, 1]
     },
     3: {
       human: 'Brisk five-minute warmup walk.Then alternate 60 seconds of ' +
