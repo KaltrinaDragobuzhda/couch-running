@@ -1,16 +1,16 @@
 .exercise-slider-item:nth-child(odd) {
-    background: #eaff2e;
+    background: 	#672B9A;
 }
 
 .exercise-slider-item:nth-child(even) {
-    background: #56d176;
+    background: #9414FF;
 }
 
 .exercise-slider-item:first-child {
-    background: #ff2450;
+    background: #C089C8;
 }
 
- .exercise-slider-item {
+.exercise-slider-item {
     display: inline-block;
     font-size: 0;
     height: 20px;
